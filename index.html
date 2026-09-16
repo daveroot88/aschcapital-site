@@ -1,0 +1,1377 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asch Capital</title>
+<meta name="description" content="Every SEC-registered boutique investment adviser with $100M to $5B in regulatory AUM, built from Form ADV Part 1. How much they manage, how fast it grew, and how much of that growth was won rather than borrowed from the market.">
+<meta name="author" content="Asch Capital">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#12191F">
+<link rel="canonical" href="https://aschcapital.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Asch Capital">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://aschcapital.com/">
+<meta property="og:title" content="Asch Capital — The Boutique RIA AUM Index">
+<meta property="og:description" content="$7.48 trillion across 10,213 SEC-registered investment advisers, built from Form ADV Part 1. How much they manage, how fast it grew, and how much of that growth was won rather than borrowed from the market.">
+<meta property="og:image" content="https://aschcapital.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Asch Capital, the boutique RIA AUM index: $7.48 trillion across 10,213 advisers.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Asch Capital — The Boutique RIA AUM Index">
+<meta name="twitter:description" content="$7.48 trillion across 10,213 SEC-registered advisers, built entirely from public Form ADV filings.">
+<meta name="twitter:image" content="https://aschcapital.com/og.png">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"WebSite","@id":"https://aschcapital.com/#website","url":"https://aschcapital.com/",
+  "name":"Asch Capital","description":"The boutique RIA AUM index, built from SEC Form ADV Part 1."},
+ {"@type":"Dataset","@id":"https://aschcapital.com/#dataset",
+  "name":"Boutique RIA AUM Index",
+  "description":"Regulatory assets under management, account counts and staffing for 10,213 SEC-registered investment advisers reporting between $100M and $5B in regulatory AUM, joined across annual Form ADV Part 1 full files and decomposed into market appreciation versus net client flows.",
+  "url":"https://aschcapital.com/","license":"https://creativecommons.org/licenses/by/4.0/",
+  "creator":{"@type":"Organization","name":"Asch Capital"},
+  "temporalCoverage":"2018-08/2026-08","dateModified":"2026-08-21",
+  "isBasedOn":[
+   {"@type":"Dataset","name":"SEC Form ADV Part 1 monthly full files","url":"https://www.sec.gov/foia/docs/invafoia.htm","creator":{"@type":"Organization","name":"U.S. Securities and Exchange Commission"}},
+   {"@type":"Dataset","name":"FRED economic data","url":"https://fred.stlouisfed.org/","creator":{"@type":"Organization","name":"Federal Reserve Bank of St. Louis"}}],
+  "variableMeasured":[
+   {"@type":"PropertyValue","name":"Regulatory assets under management","description":"Form ADV Part 1 Item 5.F(2)(c)"},
+   {"@type":"PropertyValue","name":"Client accounts","description":"Form ADV Part 1 Item 5.F(2)(f)"},
+   {"@type":"PropertyValue","name":"Employees","description":"Form ADV Part 1 Item 5.A"}]}]}
+</script>
+<style>
+:root{
+  --paper:#F2F1EC; --card:#FBFAF6; --ink:#12191F; --grid:#DCDAD1;
+  --steel:#2F5D6B; --signal:#A8322A; --gain:#1F6B4A; --amber:#8A6412;
+  --muted:#5C6560; --rule:#C9C7BD; --market:#A9B2AC;
+  --ease-out:cubic-bezier(.23,1,.32,1); --max:960px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background-color:var(--paper); color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:15.5px; line-height:1.62; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+    linear-gradient(rgba(217,222,214,.45) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217,222,214,.45) 1px, transparent 1px);
+  background-size:48px 48px,48px 48px,12px 12px,12px 12px;
+}
+body::before{content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.035;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");}
+.wrap{position:relative; z-index:1; max-width:var(--max); margin:0 auto; padding:0 18px 80px}
+a{color:inherit} ::selection{background:var(--ink); color:var(--paper)}
+
+nav{position:relative; z-index:2; max-width:var(--max); margin:0 auto; padding:0 18px}
+.topbar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:22px 0 12px; border-bottom:1.5px solid var(--ink)}
+.mark{display:flex; align-items:center; gap:9px;
+  font-family:"IBM Plex Sans Condensed",sans-serif; font-weight:700; font-size:20px; letter-spacing:.06em;
+  text-transform:uppercase; cursor:pointer; background:none; border:0; padding:0; color:inherit}
+.mark img{display:block; width:30px; height:30px; flex:0 0 auto}
+.mark span{color:var(--steel)}
+.tagline{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace; font-size:10.5px; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--muted); text-align:right}
+.stripwrap{position:relative; border-bottom:1px solid var(--rule)}
+.strip{display:flex; gap:7px; overflow-x:auto; scrollbar-width:none; padding:9px 0; scroll-behavior:smooth}
+.strip::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto; font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; letter-spacing:.09em;
+  text-transform:uppercase; padding:5px 11px; border:1px solid var(--rule); border-radius:999px;
+  background:var(--card); color:var(--muted); cursor:pointer; white-space:nowrap;
+  transition:background .18s var(--ease-out),color .18s var(--ease-out),border-color .18s var(--ease-out)}
+.chip:hover{border-color:var(--ink); color:var(--ink)}
+.chip.on{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+.chip.method{border-color:var(--amber); color:var(--amber)}
+.chip.method.on{background:var(--amber); border-color:var(--amber); color:var(--paper)}
+.cscroll{position:absolute; top:0; bottom:0; width:34px; border:0; cursor:pointer; z-index:3; font-size:15px; color:var(--muted); display:none}
+.cscroll.l{left:0; background:linear-gradient(90deg,var(--paper) 55%,transparent)}
+.cscroll.r{right:0; background:linear-gradient(270deg,var(--paper) 55%,transparent)}
+.stripwrap.over .cscroll{display:block}
+.stripwrap.over .strip{padding-left:30px; padding-right:30px}
+@media (hover:none){.stripwrap .cscroll{display:none!important}}
+
+.demobar{max-width:var(--max); margin:14px auto 0; padding:9px 14px; border:1.5px solid var(--amber);
+  border-radius:8px; background:rgba(138,100,18,.07); font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px; line-height:1.55; letter-spacing:.04em; color:var(--amber); position:relative; z-index:2}
+.demobar b{letter-spacing:.11em}
+
+h1{font-family:"IBM Plex Sans Condensed",sans-serif; font-weight:700; text-transform:uppercase;
+  font-size:clamp(34px,7vw,58px); line-height:.98; letter-spacing:-.4px; margin:16px 0 14px}
+h2{font-family:"IBM Plex Sans Condensed",sans-serif; font-weight:700; text-transform:uppercase; font-size:21px;
+  letter-spacing:.42px; margin:52px 0 16px; padding-bottom:7px; border-bottom:3px double var(--ink)}
+h3{font-family:"IBM Plex Sans Condensed",sans-serif; font-weight:700; text-transform:uppercase; font-size:15px;
+  letter-spacing:.5px; margin:26px 0 8px; color:var(--muted)}
+p{margin:0 0 14px} p+p{margin-top:-2px}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--gain); margin:26px 0 0}
+.eyebrow.q{color:var(--muted)}
+.lede{font-size:17.5px; line-height:1.58; max-width:62ch}
+.mutednote,.method{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; line-height:1.62;
+  letter-spacing:.03em; color:var(--muted); margin:8px 0 0}
+.method{color:var(--amber)}
+.cap{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; color:var(--muted);
+  letter-spacing:.03em; margin:9px 0 0; line-height:1.6}
+
+.hero{margin:22px 0 8px; border:1.5px solid var(--ink); border-radius:10px; background:var(--card); padding:10px}
+.hero svg{display:block; width:100%; height:auto}
+.draw{stroke-dasharray:1600; stroke-dashoffset:1600; animation:dash 2.1s var(--ease-out) .25s forwards}
+.fadein{opacity:0; animation:fade .55s ease 1.6s forwards}
+@keyframes dash{to{stroke-dashoffset:0}} @keyframes fade{to{opacity:1}}
+
+.kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(148px,1fr)); gap:10px; margin:20px 0}
+.kpi{border:1.5px solid var(--ink); border-radius:9px; background:var(--card); padding:11px 13px}
+.kpi .k{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:var(--muted)}
+.kpi .v{font-family:"IBM Plex Sans Condensed",sans-serif; font-weight:700; font-size:27px; line-height:1.22}
+.kpi .v.gain{color:var(--gain)} .kpi .v.risk{color:var(--signal)} .kpi .v.mkt{color:var(--steel)}
+.kpi .s{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10px; color:var(--muted); letter-spacing:.04em; line-height:1.5}
+
+.chartbox{border:1.5px solid var(--ink); border-radius:10px; background:var(--card); padding:12px 12px 6px; position:relative}
+.chartbox svg{display:block; width:100%; height:auto; overflow:visible}
+.legend{display:flex; flex-wrap:wrap; gap:6px 12px; margin:10px 2px 4px}
+.lg{display:flex; align-items:center; gap:6px; font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10.5px;
+  letter-spacing:.05em; cursor:pointer; color:var(--ink); user-select:none; background:none; border:0; padding:0}
+.lg.off{opacity:.34; text-decoration:line-through}
+.lg i{width:13px; height:9px; border-radius:2px; display:block; flex:0 0 auto}
+.lg.line i{height:3px}
+.tip{position:absolute; pointer-events:none; opacity:0; transform:translate(-50%,-100%); background:var(--ink);
+  color:var(--paper); border-radius:7px; padding:7px 9px; z-index:5; font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:10.5px; line-height:1.55; letter-spacing:.03em; white-space:nowrap; transition:opacity .12s}
+.tip .row{display:flex; justify-content:space-between; gap:14px}
+.tip .row i{width:8px;height:8px;border-radius:2px;display:inline-block;margin-right:5px}
+.axis{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:9.5px; fill:var(--muted); letter-spacing:.05em}
+.gl{stroke:var(--grid); stroke-width:1} .zero{stroke:var(--ink); stroke-width:1.2}
+
+.tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(268px,1fr)); gap:11px; margin:18px 0}
+.tile{border:1.5px solid var(--ink); border-radius:10px; background:var(--card); padding:13px; cursor:pointer;
+  text-align:left; font:inherit; color:inherit; display:flex; flex-direction:column; gap:5px;
+  transition:transform .16s var(--ease-out), box-shadow .16s var(--ease-out)}
+.tile:hover{transform:translate(-1px,-1px); box-shadow:3px 3px 0 var(--ink)}
+.tile .sp{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.tile .nm{font-family:"IBM Plex Sans Condensed",sans-serif; font-weight:700; text-transform:uppercase; font-size:19px; line-height:1.1; letter-spacing:.3px}
+.tile .aum{font-family:"IBM Plex Sans Condensed",sans-serif; font-weight:700; font-size:23px; line-height:1.15}
+.tile .gr{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10.5px; letter-spacing:.06em}
+.tile .tl{font-size:13.5px; color:var(--muted); line-height:1.5}
+.tile svg{display:block; width:100%; height:36px; margin-top:2px}
+
+.vcards{display:grid; gap:9px; margin:14px 0}
+.vcard{border:1px solid var(--rule); border-left:4px solid var(--steel); border-radius:8px; background:var(--card); padding:11px 13px}
+.vcard.ok{border-left-color:var(--gain)} .vcard.derived{border-left-color:var(--steel)} .vcard.gap{border-left-color:var(--amber)}
+.vcard .vh{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:var(--muted); margin-bottom:4px}
+.vcard .arrow{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11.5px; color:var(--steel); margin-top:6px; letter-spacing:.02em; line-height:1.6}
+.flag{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10.5px; letter-spacing:.05em; color:var(--amber); margin-top:6px; display:block; line-height:1.6}
+.flag.ok{color:var(--gain)}
+
+.lesson{background:var(--ink); color:var(--paper); border-radius:10px; padding:17px 19px; margin:22px 0}
+.lesson .k{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; opacity:.62; margin-bottom:6px}
+.lesson p{margin:0; font-size:16.5px; line-height:1.55}
+
+.tblwrap{overflow-x:auto; border:1.5px solid var(--ink); border-radius:10px; background:var(--card); margin:16px 0}
+table{border-collapse:collapse; width:100%; min-width:720px; font-size:13.5px}
+th,td{padding:9px 12px; text-align:left; border-bottom:1px solid var(--grid); white-space:nowrap}
+th{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10px; letter-spacing:.11em; text-transform:uppercase;
+  color:var(--muted); background:rgba(0,0,0,.02); cursor:pointer; user-select:none; position:sticky; top:0}
+th:hover{color:var(--ink)}
+th.sorted::after{content:" \25BE"} th.sorted.asc::after{content:" \25B4"}
+tr:last-child td{border-bottom:0}
+td.num{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12.5px; text-align:right}
+td.nm{font-weight:600; cursor:pointer} td.nm:hover{color:var(--steel)}
+.pos{color:var(--gain)} .neg{color:var(--signal)}
+.bandbar{display:inline-block; height:8px; border-radius:2px; vertical-align:middle}
+
+.pager{display:flex; justify-content:space-between; gap:12px; margin:40px 0 0; padding-top:14px; border-top:1.5px solid var(--ink)}
+.pg{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  background:none; border:0; padding:6px 0; cursor:pointer; color:var(--ink)}
+.pg:hover{color:var(--steel)} .pg[disabled]{opacity:.28; cursor:default}
+.colophon{max-width:var(--max); margin:0 auto; padding:22px 18px 46px; border-top:1.5px solid var(--ink); position:relative; z-index:1;
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10.5px; color:var(--muted); letter-spacing:.05em; line-height:1.85}
+.colophon b{color:var(--ink); letter-spacing:.13em}
+:focus-visible{outline:2px solid var(--steel); outline-offset:2px; border-radius:4px}
+#app>*{animation:rise .44s var(--ease-out) both}
+#app>*:nth-child(1){animation-delay:.02s} #app>*:nth-child(2){animation-delay:.06s}
+#app>*:nth-child(3){animation-delay:.10s} #app>*:nth-child(4){animation-delay:.14s}
+#app>*:nth-child(5){animation-delay:.18s} #app>*:nth-child(6){animation-delay:.22s}
+#app>*:nth-child(n+7){animation-delay:.26s}
+@keyframes rise{from{opacity:0; transform:translateY(9px)} to{opacity:1; transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+@media (max-width:560px){ .topbar{flex-direction:column; gap:4px} .tagline{text-align:left} }
+/* Chart text is sized in viewBox units, so its real pixel size depends on how far
+   the SVG is scaled down. Below 700px the charts keep a minimum width and scroll,
+   and the type is scaled up to stay legible at that reduced scale. */
+.axis.rowlabel{font-size:10.5px}
+.herolabel{font-size:13px; letter-spacing:.13em}
+.herosub{font-size:11px; letter-spacing:.12em}
+@media (max-width:700px){
+  .chartbox{overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch}
+  .chartbox > svg{min-width:660px}
+  .chartbox .legend,.chartbox .tools,.chartbox .kpis,.chartbox .cap{min-width:0}
+  .chartbox .axis{font-size:14px}
+  .chartbox .axis.rowlabel{font-size:15.5px}
+  .hero .herolabel{font-size:19px}
+  .hero .herosub{font-size:16px}
+  .scrollhint{display:block}
+}
+.scrollhint{display:none; font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10px;
+  letter-spacing:.11em; text-transform:uppercase; color:var(--muted); margin:6px 0 0}
+
+/* ---------- live-data additions ---------- */
+.loading{padding:70px 0; text-align:center; font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.loading .bar{width:180px; height:3px; background:var(--grid); margin:16px auto 0; border-radius:2px; overflow:hidden}
+.loading .bar i{display:block; height:100%; width:38%; background:var(--ink); animation:slide 1.05s var(--ease-in-out) infinite}
+@keyframes slide{0%{transform:translateX(-100%)}100%{transform:translateX(360%)}}
+.failed{border:1.5px solid var(--signal); border-radius:10px; background:var(--card); padding:16px 18px; margin:30px 0}
+.failed h3{color:var(--signal); margin-top:0}
+
+.tools{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:16px 0 4px}
+.tools input[type=search],.tools select{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px;
+  padding:7px 11px; border:1.5px solid var(--ink); border-radius:8px; background:var(--card); color:var(--ink);
+  letter-spacing:.04em; -webkit-appearance:none; appearance:none}
+.tools input[type=search]{flex:1 1 230px; min-width:0}
+.tools select{cursor:pointer; padding-right:26px;
+  background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+  background-position:calc(100% - 14px) 52%,calc(100% - 9px) 52%; background-size:5px 5px,5px 5px; background-repeat:no-repeat}
+.tools .hits{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; color:var(--muted); letter-spacing:.08em}
+.pagi{display:flex; gap:8px; align-items:center; justify-content:center; margin:14px 0 0;
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; letter-spacing:.08em; color:var(--muted)}
+.pagi button{font:inherit; letter-spacing:inherit; padding:5px 12px; border:1px solid var(--rule);
+  border-radius:999px; background:var(--card); color:var(--ink); cursor:pointer}
+.pagi button:hover:not([disabled]){border-color:var(--ink)}
+.pagi button[disabled]{opacity:.3; cursor:default}
+
+.navsearch{position:relative; flex:0 1 240px}
+.navsearch input{width:100%; font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px;
+  padding:5px 11px; border:1px solid var(--rule); border-radius:999px; background:var(--card);
+  color:var(--ink); letter-spacing:.06em; -webkit-appearance:none}
+.navsearch input:focus{border-color:var(--ink); outline:none}
+.ac{position:absolute; top:calc(100% + 5px); left:0; right:0; z-index:20; background:var(--card);
+  border:1.5px solid var(--ink); border-radius:9px; overflow:hidden; box-shadow:3px 3px 0 rgba(18,25,31,.14)}
+.ac button{display:block; width:100%; text-align:left; font:inherit; font-size:12.5px; padding:7px 11px;
+  background:none; border:0; border-bottom:1px solid var(--grid); cursor:pointer; color:var(--ink)}
+.ac button:last-child{border-bottom:0}
+.ac button:hover,.ac button.sel{background:var(--ink); color:var(--paper)}
+.ac .sub{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10px; color:var(--muted); letter-spacing:.06em}
+.ac button:hover .sub,.ac button.sel .sub{color:rgba(242,241,236,.7)}
+
+.srcline{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10px; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--gain); margin:10px 0 0}
+.srcline.warn{color:var(--amber)}
+.formula{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11.5px; line-height:1.9;
+  background:var(--card); border:1.5px solid var(--ink); border-radius:9px; padding:13px 15px;
+  margin:14px 0; overflow-x:auto; white-space:pre; letter-spacing:.02em}
+@media (max-width:700px){ .topbar{flex-wrap:wrap} .navsearch{flex:1 1 100%; order:3} }
+</style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Condensed:wght@400;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<nav>
+  <div class="topbar">
+    <button class="mark" id="home"><img src="/logo.svg" width="30" height="30" alt="" aria-hidden="true">Asch<span>&nbsp;Capital</span></button>
+    <div class="navsearch"><input id="q" type="search" placeholder="Search 10,000+ advisers or a CRD" autocomplete="off" spellcheck="false"></div>
+    <div class="tagline" id="tag">Loading Form ADV&hellip;</div>
+  </div>
+  <div class="stripwrap" id="stripwrap">
+    <button class="cscroll l" aria-label="scroll left">&#8249;</button>
+    <div class="strip" id="strip"></div>
+    <button class="cscroll r" aria-label="scroll right">&#8250;</button>
+  </div>
+</nav>
+<noscript>
+  <div class="wrap" style="padding-top:24px">
+    <h1>Asch Capital</h1>
+    <p class="lede">The boutique RIA AUM index: <b>$7.48 trillion</b> across <b>10,213</b> SEC-registered
+    investment advisers reporting between $100 million and $5 billion in regulatory assets under
+    management, built entirely from public Form ADV Part 1 filings.</p>
+    <p>Every AUM, account and employee figure is a value an adviser filed with the SEC under Item 5
+    of Form ADV Part 1. The split between market appreciation and net client flows is derived from
+    those filings and a blended benchmark built from FRED series SP500 and DGS10.</p>
+    <h2>What the filings show</h2>
+    <ul>
+      <li>Universe: 10,213 advisers, $7.48 trillion in regulatory AUM, from the 2026-08 Form ADV full file.</li>
+      <li>9 annual snapshots, 2018-08 to 2026-08, joined on Organization CRD number.</li>
+      <li>Over the period the blended benchmark compounded 2.08x. The
+          8,122 advisers in the band at the start grew
+          1.76x counting the 3,181 that
+          stopped filing as zero, and 2.90x counting only the
+          4,941 still filing.</li>
+      <li>The median adviser grew slower than the benchmark in every size band, while aggregate
+          assets in every band roughly doubled. Growth is concentrated in a few hundred acquirers.</li>
+    </ul>
+    <h2>Sources</h2>
+    <p><a href="https://www.sec.gov/foia/docs/invafoia.htm">SEC Form ADV Part 1 monthly full files</a>
+    &middot; <a href="https://fred.stlouisfed.org/">FRED, Federal Reserve Bank of St. Louis</a></p>
+    <p><b>This site requires JavaScript</b> for the interactive index, screener and per-adviser detail.
+    Nothing here is investment advice, a recommendation, or a performance record.</p>
+  </div>
+</noscript>
+<div class="wrap"><main id="app"><div class="loading">Fetching SEC Form ADV Part 1<div class="bar"><i></i></div></div></main></div>
+<footer class="colophon" id="colophon"></footer>
+
+<script>
+"use strict";
+
+/* ====================== 1. DATA LAYER ===================================
+   index.json is produced by ingest/build_index.py from the SEC's own
+   monthly Form ADV Part 1 full files. It carries raw filed values only.
+   Every growth, flow and ratio on this site is derived below, in the
+   browser, so the arithmetic can be checked against the filings.
+   ======================================================================= */
+let DATA=null, FIRMS=[], YEARS=[], BENCH=[], META=null, BYCRD=new Map();
+const clean = s => String(s).replace(/&amp;/g,"&");
+
+function derive(){
+  META   = DATA.meta;
+  YEARS  = META.periods.map(p=>p.slice(0,4));
+  BENCH  = DATA.benchmark.periods.map(p=>p.blended);   // % per period, [0] is null
+  const C = META.columns;
+  FIRMS = DATA.firms.map(r=>{
+    const f={crd:r[0],name:r[1],city:r[2],state:r[3],aum:r[4],accts:r[5],
+             emp:r[6],advemp:r[7],clients:r[8],disc:r[9],daccts:r[10],acqs:r[11],pfPct:r[12]};
+    // --- market vs flows, one linked year at a time ---
+    f.mc=[null]; f.fc=[null]; f.mcTotal=0; f.fcTotal=0; f.linked=0;
+    for(let t=1;t<f.aum.length;t++){
+      const p=f.aum[t-1], c=f.aum[t], b=BENCH[t];
+      if(p==null||c==null||b==null){ f.mc.push(null); f.fc.push(null); continue; }
+      const mc=p*b/100, fc=c-p-mc;
+      f.mc.push(+mc.toFixed(1)); f.fc.push(+fc.toFixed(1));
+      f.mcTotal+=mc; f.fcTotal+=fc; f.linked++;
+    }
+    f.mcTotal=+f.mcTotal.toFixed(1); f.fcTotal=+f.fcTotal.toFixed(1);
+    const idx=f.aum.map((v,i)=>v==null?-1:i).filter(i=>i>=0);
+    f.first=idx[0]; f.last=idx[idx.length-1];
+    f.now=f.aum[f.last]; f.base=f.aum[f.first];
+    f.span=f.last-f.first;
+    f.growth=+(f.now-f.base).toFixed(1);
+    f.cagr = f.span>0 && f.base>0 ? +((Math.pow(f.now/f.base,1/f.span)-1)*100).toFixed(2) : null;
+    const avg=(f.base+f.now)/2;
+    f.orgCagr = f.linked>0 && avg>0 ? +(f.fcTotal/avg/f.linked*100).toFixed(2) : null;
+    f.earned  = f.growth!==0 ? Math.round(f.fcTotal/f.growth*100) : null;
+    f.acctNow = f.accts[f.last]; f.acctBase=f.accts[f.first];
+    f.perAcct = f.acctNow ? +(f.now*1000/f.acctNow).toFixed(0) : null;
+    f.perEmp  = f.emp ? +(f.now/f.emp).toFixed(1) : null;
+    f.full    = f.linked === f.aum.length-1;      // present in every snapshot
+    f.color   = COLORS[f.crd % COLORS.length];
+    f.label   = clean(f.name);
+    f.search  = (f.name+" "+f.city+" "+f.state+" "+f.crd).toLowerCase();
+    return f;
+  });
+  FIRMS.sort((a,b)=>b.now-a.now);
+  FIRMS.forEach((f,i)=>{f.rank=i+1; BYCRD.set(f.crd,f);});
+  UNIVERSE = YEARS.map((y,t)=>+FIRMS.reduce((a,f)=>a+(f.aum[t]||0),0).toFixed(0));
+  PRESENT  = YEARS.map((y,t)=>FIRMS.filter(f=>f.aum[t]!=null).length);
+  TOTAL    = UNIVERSE[UNIVERSE.length-1];
+  TOTMC    = +FIRMS.reduce((a,f)=>a+f.mcTotal,0).toFixed(0);
+  TOTFC    = +FIRMS.reduce((a,f)=>a+f.fcTotal,0).toFixed(0);
+  TOTACCT  = FIRMS.reduce((a,f)=>a+(f.acctNow||0),0);
+  TOTEMP   = FIRMS.reduce((a,f)=>a+(f.emp||0),0);
+  FULL     = FIRMS.filter(f=>f.full);
+  const s=FULL.map(f=>f.now).sort((x,y)=>x-y);
+  MEDIAN   = s.length%2 ? s[s.length>>1] : (s[(s.length>>1)-1]+s[s.length>>1])/2;
+  const o=FULL.map(f=>f.orgCagr).filter(v=>v!=null).sort((x,y)=>x-y);
+  MEDIAN_ORG = +(o.length%2 ? o[o.length>>1] : (o[(o.length>>1)-1]+o[o.length>>1])/2).toFixed(2);
+  STATES = (()=>{ const m=new Map();
+    FIRMS.forEach(f=>{ const k=f.state||"--";
+      const e=m.get(k)||{state:k,n:0,aum:0,fc:0,mc:0,acct:0};
+      e.n++; e.aum+=f.now; e.fc+=f.fcTotal; e.mc+=f.mcTotal; e.acct+=f.acctNow||0; m.set(k,e); });
+    return [...m.values()].sort((a,b)=>b.aum-a.aum); })();
+}
+let UNIVERSE,PRESENT,TOTAL,TOTMC,TOTFC,TOTACCT,TOTEMP,MEDIAN,MEDIAN_ORG,FULL,STATES;
+
+/* The equity weight is the single largest assumption on this site, so it is a
+   variable rather than a constant. Everything below recomputes from the two raw
+   FRED legs, which means a reader can move it and watch the answer move. */
+function blendAt(w){
+  return DATA.benchmark.periods.map(p =>
+    (p.equity==null||p.bond==null) ? null : +(w*p.equity + (1-w)*p.bond).toFixed(3));
+}
+function statsAt(w, set){
+  const B=blendAt(w), orgs=[]; let mc=0, fc=0, mult=1;
+  for(let t=1;t<B.length;t++) if(B[t]!=null) mult*=1+B[t]/100;
+  (set||FULL).forEach(f=>{
+    let m=0,c=0,n=0,lastV=null,firstV=null;
+    for(let t=1;t<f.aum.length;t++){
+      const pv=f.aum[t-1], cv=f.aum[t];
+      if(pv==null||cv==null||B[t]==null) continue;
+      if(firstV==null) firstV=pv;
+      const mk=pv*B[t]/100; m+=mk; c+=cv-pv-mk; n++; lastV=cv;
+    }
+    mc+=m; fc+=c;
+    const avg=(firstV+lastV)/2;
+    if(n&&avg>0) orgs.push(c/avg/n*100);
+  });
+  orgs.sort((a,b)=>a-b);
+  const q=f=>orgs.length?+orgs[Math.floor((orgs.length-1)*f)].toFixed(2):0;
+  return {w, mult, market:+mc.toFixed(0), flows:+fc.toFixed(0),
+          med:q(.5), p25:q(.25), p75:q(.75),
+          negPct:orgs.length?Math.round(orgs.filter(v=>v<0).length/orgs.length*100):0, n:orgs.length};
+}
+function neutralWeight(set){          // equity weight at which the median adviser is flat
+  let lo=0, hi=1;
+  for(let i=0;i<24;i++){ const mid=(lo+hi)/2;
+    if(statsAt(mid,set).med>0) lo=mid; else hi=mid; }
+  return (lo+hi)/2;
+}
+const COLORS=["#1D4ED8","#0F766E","#B45309","#7C3AED","#4D7C0F","#BE2A1D","#2F5D6B","#A16207",
+              "#8B1E3F","#0E7490","#6B4F3A","#4A5D23","#0B6E4F","#5B5EA6","#C2730A","#111827"];
+/* ============================ 3. CHART ENGINE ===========================
+   No external library. Inline SVG, one hover layer, one tooltip.
+   ======================================================================= */
+const NS="http://www.w3.org/2000/svg";
+function el(t,a){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;}
+function fmtM(v){const s=v<0?"-":"";v=Math.abs(v);
+  if(v>=1e6)  return s+"$"+(v/1e6).toFixed(v>=1e7?1:2)+"T";
+  if(v>=1000) return s+"$"+(v/1000).toFixed(v>=10000?1:2)+"B";
+  return s+"$"+Math.round(v)+"M";}
+function fmtMs(v){const s=v<0?"-":"+";return s+fmtM(Math.abs(v)).replace("-","");}
+const fmtPct = v => (v>0?"+":"")+v.toFixed(1)+"%";
+const fmtN   = v => v.toLocaleString();
+
+function mkBox(host){const b=document.createElement("div");b.className="chartbox";host.appendChild(b);return b;}
+function mkTip(box){const t=document.createElement("div");t.className="tip";box.appendChild(t);return t;}
+function place(tip,box,xFrac,yPx,ev){
+  const bx=box.getBoundingClientRect();
+  // When the box scrolls horizontally a fraction of its width is the wrong anchor,
+  // so prefer the real pointer position and add the scroll offset back in.
+  const x = ev ? (ev.clientX-bx.left+box.scrollLeft) : (xFrac*bx.width+box.scrollLeft);
+  tip.style.left=Math.max(70,Math.min(bx.width+box.scrollLeft-70,x))+"px";
+  tip.style.top=yPx+"px"; tip.style.opacity=1;}
+
+/* ---- multi-line chart -------------------------------------------------- */
+function lineChart(host,opts){
+  const W=1000,H=opts.h||330,PL=62,PR=14,PT=14,PB=30;
+  const labels=opts.labels, series=opts.series.map(s=>({...s,on:true}));
+  const box=mkBox(host), svg=el("svg",{viewBox:`0 0 ${W} ${H}`,preserveAspectRatio:"none"});
+  box.appendChild(svg); const tip=mkTip(box);
+  const legend=document.createElement("div"); legend.className="legend"; box.appendChild(legend);
+  const X=i=>PL+i*(W-PL-PR)/(labels.length-1);
+  let lo,hi,Y;
+  function draw(){
+    const vis=series.filter(s=>s.on), all=[].concat(...vis.map(s=>s.data));
+    lo=Math.min(...all); hi=Math.max(...all);
+    if(opts.fromZero) lo=0;
+    const pad=(hi-lo)*.10||1; if(!opts.fromZero) lo-=pad; hi+=pad;
+    Y=v=>PT+(hi-v)/(hi-lo)*(H-PT-PB);
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
+    for(let t=0;t<=5;t++){ const v=lo+(hi-lo)*t/5, y=Y(v);
+      svg.appendChild(el("line",{x1:PL,x2:W-PR,y1:y,y2:y,class:"gl"}));
+      const tx=el("text",{x:PL-8,y:y+3.5,"text-anchor":"end",class:"axis"});
+      tx.textContent=(opts.yFmt||fmtM)(v); svg.appendChild(tx); }
+    labels.forEach((l,i)=>{const tx=el("text",{x:X(i),y:H-9,"text-anchor":"middle",class:"axis"});
+      tx.textContent=l; svg.appendChild(tx);});
+    series.forEach(s=>{ if(!s.on)return;
+      let d=""; s.data.forEach((v,i)=>{ d+=(i?"L":"M")+X(i).toFixed(1)+" "+Y(v).toFixed(1)+" "; });
+      if(opts.area && series.filter(x=>x.on).length===1)
+        svg.appendChild(el("path",{d:d+"L"+X(s.data.length-1)+" "+Y(lo)+" L"+X(0)+" "+Y(lo)+" Z",
+          fill:s.color,opacity:".13",stroke:"none"}));
+      svg.appendChild(el("path",{d,fill:"none",stroke:s.color,"stroke-width":s.w||2.1,
+        "stroke-linejoin":"round","stroke-linecap":"round","stroke-dasharray":s.dash||"none"})); });
+    const hov=el("g",{}); svg.appendChild(hov);
+    const rect=el("rect",{x:PL,y:0,width:W-PL-PR,height:H,fill:"transparent"}); svg.appendChild(rect);
+    rect.addEventListener("mouseleave",()=>{tip.style.opacity=0;while(hov.firstChild)hov.removeChild(hov.firstChild);});
+    rect.addEventListener("mousemove",e=>{
+      const r=svg.getBoundingClientRect(), px=(e.clientX-r.left)/r.width*W;
+      let i=Math.round((px-PL)/((W-PL-PR)/(labels.length-1)));
+      i=Math.max(0,Math.min(labels.length-1,i));
+      while(hov.firstChild)hov.removeChild(hov.firstChild);
+      hov.appendChild(el("line",{x1:X(i),x2:X(i),y1:PT,y2:H-PB,stroke:"#12191F","stroke-width":1,opacity:".35"}));
+      let rows=`<b>${labels[i]}</b>`;
+      series.filter(s=>s.on).slice(0,12).forEach(s=>{
+        hov.appendChild(el("circle",{cx:X(i),cy:Y(s.data[i]),r:3.4,fill:s.color,stroke:"#FBFAF6","stroke-width":1.4}));
+        rows+=`<div class="row"><span><i style="background:${s.color}"></i>${clean(s.name)}</span><span>${(opts.tFmt||opts.yFmt||fmtM)(s.data[i])}</span></div>`;});
+      tip.innerHTML=rows; place(tip,box,X(i)/W,(PT+8)/H*box.getBoundingClientRect().height,e);
+    });
+  }
+  series.forEach(s=>{ const b=document.createElement("button"); b.className="lg line"; b.type="button";
+    b.innerHTML=`<i style="background:${s.color}"></i>${clean(s.name)}`;
+    b.onclick=()=>{ s.on=!s.on; b.classList.toggle("off",!s.on);
+      if(!series.some(x=>x.on)){s.on=true;b.classList.remove("off");} draw(); };
+    legend.appendChild(b); });
+  if(opts.noLegend) legend.remove();
+  draw(); return box;
+}
+
+/* ---- stacked area ------------------------------------------------------ */
+function stackedArea(host,opts){
+  const W=1000,H=opts.h||360,PL=62,PR=14,PT=14,PB=30;
+  const labels=opts.labels, S=opts.series;
+  const box=mkBox(host), svg=el("svg",{viewBox:`0 0 ${W} ${H}`,preserveAspectRatio:"none"});
+  box.appendChild(svg); const tip=mkTip(box);
+  const tops=labels.map((_,i)=>S.reduce((a,s)=>a+s.data[i],0));
+  const hi=Math.max(...tops)*1.04;
+  const X=i=>PL+i*(W-PL-PR)/(labels.length-1), Y=v=>PT+(1-v/hi)*(H-PT-PB);
+  for(let t=0;t<=5;t++){ const v=hi*t/5, y=Y(v);
+    svg.appendChild(el("line",{x1:PL,x2:W-PR,y1:y,y2:y,class:"gl"}));
+    const tx=el("text",{x:PL-8,y:y+3.5,"text-anchor":"end",class:"axis"}); tx.textContent=fmtM(v); svg.appendChild(tx); }
+  labels.forEach((l,i)=>{const tx=el("text",{x:X(i),y:H-9,"text-anchor":"middle",class:"axis"});tx.textContent=l;svg.appendChild(tx);});
+  const base=labels.map(()=>0);
+  S.forEach(s=>{
+    let up="",down="";
+    s.data.forEach((v,i)=>{ up+=(i?"L":"M")+X(i).toFixed(1)+" "+Y(base[i]+v).toFixed(1)+" "; });
+    for(let i=labels.length-1;i>=0;i--) down+="L"+X(i).toFixed(1)+" "+Y(base[i]).toFixed(1)+" ";
+    svg.appendChild(el("path",{d:up+down+"Z",fill:s.color,opacity:".82",stroke:"#FBFAF6","stroke-width":.6}));
+    s.data.forEach((v,i)=>base[i]+=v);
+  });
+  const hov=el("g",{}); svg.appendChild(hov);
+  const rect=el("rect",{x:PL,y:0,width:W-PL-PR,height:H,fill:"transparent"}); svg.appendChild(rect);
+  rect.addEventListener("mouseleave",()=>{tip.style.opacity=0;while(hov.firstChild)hov.removeChild(hov.firstChild);});
+  rect.addEventListener("mousemove",e=>{
+    const r=svg.getBoundingClientRect(), px=(e.clientX-r.left)/r.width*W;
+    let i=Math.round((px-PL)/((W-PL-PR)/(labels.length-1))); i=Math.max(0,Math.min(labels.length-1,i));
+    while(hov.firstChild)hov.removeChild(hov.firstChild);
+    hov.appendChild(el("line",{x1:X(i),x2:X(i),y1:PT,y2:H-PB,stroke:"#12191F","stroke-width":1,opacity:".4"}));
+    const rank=[...S].sort((a,b)=>b.data[i]-a.data[i]).slice(0,6);
+    let rows=`<b>${labels[i]} &middot; total ${fmtM(tops[i])}</b>`;
+    rank.forEach(s=>{rows+=`<div class="row"><span><i style="background:${s.color}"></i>${clean(s.name)}</span><span>${fmtM(s.data[i])}</span></div>`;});
+    rows+=`<div class="row" style="opacity:.6"><span>+ ${S.length-6} smaller</span><span></span></div>`;
+    tip.innerHTML=rows; place(tip,box,X(i)/W,(PT+8)/H*box.getBoundingClientRect().height,e);
+  });
+  return box;
+}
+
+/* ---- horizontal bar (single or paired) --------------------------------- */
+function barChart(host,rows,opts){
+  opts=opts||{};
+  const W=1000,rowH=opts.rowH||26,PT=8,PB=20,PL=opts.pl||210,PR=64;
+  const H=PT+rows.length*rowH+PB;
+  const box=mkBox(host), svg=el("svg",{viewBox:`0 0 ${W} ${H}`,preserveAspectRatio:"none"}); box.appendChild(svg);
+  const max=Math.max(...rows.map(r=>Math.abs(r.value)))||1;
+  rows.forEach((r,i)=>{
+    const y=PT+i*rowH, w=Math.abs(r.value)/max*(W-PL-PR);
+    svg.appendChild(el("rect",{x:PL,y:y+4,width:Math.max(w,1),height:rowH-11,fill:r.color||"#12191F",opacity:r.dim?".38":".9",rx:2}));
+    const t=el("text",{x:PL-10,y:y+rowH/2+3.5,"text-anchor":"end",class:"axis rowlabel"});
+    t.textContent=r.label; t.style.fill=r.dim?"#5C6560":"#12191F"; svg.appendChild(t);
+    const v=el("text",{x:PL+w+8,y:y+rowH/2+3.5,class:"axis"}); v.textContent=(opts.fmt||(x=>x))(r.value); svg.appendChild(v);
+    if(r.onClick){const hit=el("rect",{x:0,y:y,width:W,height:rowH,fill:"transparent",style:"cursor:pointer"});
+      hit.addEventListener("click",r.onClick); svg.appendChild(hit);}
+  });
+  return box;
+}
+
+/* ---- stacked / diverging bar: market vs flows --------------------------- */
+function splitBar(host,rows,opts){
+  opts=opts||{};
+  const W=1000,rowH=opts.rowH||27,PT=8,PB=26,PL=opts.pl||210,PR=96;
+  const H=PT+rows.length*rowH+PB;
+  const box=mkBox(host), svg=el("svg",{viewBox:`0 0 ${W} ${H}`,preserveAspectRatio:"none"});
+  box.appendChild(svg); const tip=mkTip(box);
+  const negMax=Math.max(0,...rows.map(r=>Math.max(0,-r.a)+Math.max(0,-r.b)));
+  const posMax=Math.max(1,...rows.map(r=>Math.max(0,r.a)+Math.max(0,r.b)));
+  const span=negMax+posMax, plot=W-PL-PR, zero=PL+negMax/span*plot;
+  const px=v=>v/span*plot;
+  svg.appendChild(el("line",{x1:zero,x2:zero,y1:PT,y2:H-PB,class:"zero"}));
+  rows.forEach((r,i)=>{
+    const y=PT+i*rowH, h=rowH-11;
+    let cursorP=zero, cursorN=zero;
+    [[r.a,opts.aColor||"#A9B2AC",opts.aName||"Market"],[r.b,r.b<0?"#A8322A":(opts.bColor||"#1F6B4A"),opts.bName||"Net flows"]]
+      .forEach(([v,c])=>{ if(!v)return; const w=px(Math.abs(v));
+        if(v>0){svg.appendChild(el("rect",{x:cursorP,y:y+4,width:w,height:h,fill:c,rx:2}));cursorP+=w;}
+        else{cursorN-=w;svg.appendChild(el("rect",{x:cursorN,y:y+4,width:w,height:h,fill:c,rx:2}));}});
+    const t=el("text",{x:PL-10,y:y+rowH/2+3.5,"text-anchor":"end",class:"axis rowlabel"});
+    t.textContent=r.label; t.style.fill="#12191F"; svg.appendChild(t);
+    const tot=r.a+r.b;
+    const v=el("text",{x:W-PR+8,y:y+rowH/2+3.5,class:"axis"}); v.textContent=fmtMs(tot); svg.appendChild(v);
+    const hit=el("rect",{x:0,y:y,width:W,height:rowH,fill:"transparent",style:r.onClick?"cursor:pointer":""});
+    if(r.onClick) hit.addEventListener("click",r.onClick);
+    hit.addEventListener("mousemove",ev=>{
+      tip.innerHTML=`<b>${r.label}</b>
+        <div class="row"><span><i style="background:${opts.aColor||"#A9B2AC"}"></i>${opts.aName||"Market"}</span><span>${fmtMs(r.a)}</span></div>
+        <div class="row"><span><i style="background:${r.b<0?"#A8322A":(opts.bColor||"#1F6B4A")}"></i>${opts.bName||"Net flows"}</span><span>${fmtMs(r.b)}</span></div>
+        <div class="row"><span>Total change</span><span>${fmtMs(tot)}</span></div>`;
+      place(tip,box,.5,(y+2)/H*box.getBoundingClientRect().height,ev);});
+    hit.addEventListener("mouseleave",()=>tip.style.opacity=0);
+    svg.appendChild(hit);
+  });
+  const zl=el("text",{x:zero,y:H-8,"text-anchor":"middle",class:"axis"}); zl.textContent="0"; svg.appendChild(zl);
+  return box;
+}
+
+/* ---- scatter: size vs organic growth ----------------------------------- */
+function scatter(host,pts,opts){
+  const W=1000,H=opts.h||400,PL=62,PR=24,PT=18,PB=42;
+  const box=mkBox(host), svg=el("svg",{viewBox:`0 0 ${W} ${H}`,preserveAspectRatio:"none"});
+  box.appendChild(svg); const tip=mkTip(box);
+  const xs=pts.map(p=>Math.log10(p.x)), ys=pts.map(p=>p.y);
+  const x0=Math.floor(Math.min(...xs)*4)/4-.06, x1=Math.ceil(Math.max(...xs)*4)/4+.06;
+  const y0=Math.min(...ys)-2, y1=Math.max(...ys)+2;
+  const X=v=>PL+(Math.log10(v)-x0)/(x1-x0)*(W-PL-PR), Y=v=>PT+(y1-v)/(y1-y0)*(H-PT-PB);
+  const nearZero=(y1-y0)/9;
+  for(let t=0;t<=5;t++){const v=y0+(y1-y0)*t/5,y=Y(v);
+    svg.appendChild(el("line",{x1:PL,x2:W-PR,y1:y,y2:y,class:"gl"}));
+    if(y0<0&&y1>0&&Math.abs(v)<nearZero) continue;
+    const tx=el("text",{x:PL-8,y:y+3.5,"text-anchor":"end",class:"axis"});tx.textContent=v.toFixed(0)+"%";svg.appendChild(tx);}
+  [100,200,500,1000,2000,5000].filter(v=>Math.log10(v)>=x0&&Math.log10(v)<=x1).forEach(v=>{
+    svg.appendChild(el("line",{x1:X(v),x2:X(v),y1:PT,y2:H-PB,class:"gl"}));
+    const tx=el("text",{x:X(v),y:H-24,"text-anchor":"middle",class:"axis"});tx.textContent=fmtM(v);svg.appendChild(tx);});
+  if(y0<0&&y1>0){ svg.appendChild(el("line",{x1:PL,x2:W-PR,y1:Y(0),y2:Y(0),class:"zero"}));
+    const z=el("text",{x:PL-8,y:Y(0)+3.5,"text-anchor":"end",class:"axis"});
+    z.textContent="0%"; z.style.fill="#12191F"; svg.appendChild(z); }
+  const rMax=Math.max(...pts.map(p=>p.r)), taken=[];
+  pts.forEach(p=>{
+    const rr=7+Math.sqrt(p.r/rMax)*17;
+    const c=el("circle",{cx:X(p.x),cy:Y(p.y),r:rr,fill:p.color,opacity:".62",stroke:p.color,"stroke-width":1.4,style:"cursor:pointer"});
+    c.addEventListener("mousemove",ev=>{ tip.innerHTML=`<b>${clean(p.name)}</b>
+      <div class="row"><span>Regulatory AUM</span><span>${fmtM(p.x)}</span></div>
+      <div class="row"><span>Organic growth</span><span>${fmtPct(p.y)}/yr</span></div>
+      <div class="row"><span>Accounts</span><span>${fmtN(p.r)}</span></div>`;
+      place(tip,box,X(p.x)/W,(Y(p.y)-rr-4)/H*box.getBoundingClientRect().height,ev);});
+    c.addEventListener("mouseleave",()=>tip.style.opacity=0);
+    if(p.onClick) c.addEventListener("click",p.onClick);
+    svg.appendChild(c);
+    if(p.tag){
+      let ty=Y(p.y)-rr-5;
+      while(taken.some(t=>Math.abs(t.x-X(p.x))<66 && Math.abs(t.y-ty)<11)) ty-=12;
+      taken.push({x:X(p.x),y:ty});
+      const t=el("text",{x:X(p.x),y:ty,"text-anchor":"middle",class:"axis rowlabel"});
+      t.textContent=p.tag;t.style.fill="#12191F";svg.appendChild(t);}
+  });
+  const xl=el("text",{x:(PL+W-PR)/2,y:H-6,"text-anchor":"middle",class:"axis"});
+  xl.textContent="REGULATORY AUM (LOG SCALE) &rarr;"; xl.textContent="REGULATORY AUM, LOG SCALE"; svg.appendChild(xl);
+  return box;
+}
+
+/* ---- sparkline: AUM path, flow-negative years picked out in red -------- */
+function sparkline(f){
+  const W=240,H=36,lo=Math.min(...f.aum),hi=Math.max(...f.aum);
+  const X=i=>i*W/(NY-1), Y=v=>H-3-(v-lo)/((hi-lo)||1)*(H-8);
+  let d=""; f.aum.forEach((v,i)=>{d+=(i?"L":"M")+X(i).toFixed(1)+" "+Y(v).toFixed(1)+" ";});
+  let neg=""; for(let i=1;i<NY;i++) if(f.fc[i]<0)
+    neg+=`M${X(i-1).toFixed(1)} ${Y(f.aum[i-1]).toFixed(1)} L${X(i).toFixed(1)} ${Y(f.aum[i]).toFixed(1)} `;
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">
+    <path d="${d}" fill="none" stroke="${f.color}" stroke-width="1.9" stroke-linejoin="round"/>
+    <path d="${neg}" fill="none" stroke="#A8322A" stroke-width="2.8" stroke-linecap="round"/></svg>`;
+}
+
+
+/* ====================== 4. SCREENS ====================================== */
+const app=document.getElementById("app");
+const SCREENS=[{id:"index",label:"Index"},{id:"method",label:"Methodology",cls:"method"},
+               {id:"ceiling",label:"The Ceiling",cls:"method"},
+               {id:"cohorts",label:"By Size"},{id:"states",label:"By State"},
+               {id:"screener",label:"Screener"},{id:"disclosures",label:"Disclosures"}];
+function sec(html){const d=document.createElement("div"); d.innerHTML=html; while(d.firstChild) app.appendChild(d.firstChild);}
+function node(html){const d=document.createElement("div"); d.innerHTML=html.trim(); return d.firstElementChild;}
+function kpis(items){const g=document.createElement("div"); g.className="kpis";
+  g.innerHTML=items.map(i=>`<div class="kpi"><div class="k">${i.k}</div><div class="v ${i.c||""}">${i.v}</div><div class="s">${i.s||""}</div></div>`).join("");
+  app.appendChild(g); return g;}
+const filedOn = ()=> META.periods[META.periods.length-1];
+
+const COHORTS=[
+  {k:"$2B - $5B",   lo:2000, hi:5000, color:"#111827"},
+  {k:"$1B - $2B",   lo:1000, hi:2000, color:"#2F5D6B"},
+  {k:"$500M - $1B", lo:500,  hi:1000, color:"#0F766E"},
+  {k:"$250M - $500M",lo:250, hi:500,  color:"#4D7C0F"},
+  {k:"$100M - $250M",lo:100, hi:250,  color:"#B45309"}];
+const cohortOf = v => COHORTS.find(c=>v>=c.lo&&v<c.hi) || COHORTS[COHORTS.length-1];
+
+function heroSVG(){
+  const W=1000,H=250,PL=10,PR=10,PT=26,PB=18, hi=Math.max(...UNIVERSE)*1.02;
+  const X=i=>PL+i*(W-PL-PR)/(YEARS.length-1), Y=v=>PT+(hi-v)/hi*(H-PT-PB);
+  let d=""; UNIVERSE.forEach((v,i)=>{d+=(i?"L":"M")+X(i).toFixed(1)+" "+Y(v).toFixed(1)+" ";});
+  const N=YEARS.length-1;
+  return `<svg viewBox="0 0 ${W} ${H}" aria-label="Total regulatory AUM of the boutique RIA universe, ${YEARS[0]} to ${YEARS[N]}">
+    <g class="fadein"><path d="${d}L${X(N)} ${Y(0)} L${X(0)} ${Y(0)} Z" fill="#12191F" opacity=".08"/></g>
+    <path d="${d}" fill="none" stroke="#12191F" stroke-width="2.8" stroke-linejoin="round" class="draw"/>
+    <line x1="${X(N)}" y1="${Y(UNIVERSE[N])}" x2="${X(N)}" y2="${Y(0)}" stroke="#1F6B4A" stroke-width="1.4" stroke-dasharray="4 4" class="fadein"/>
+    <text x="${X(N)}" y="${Y(UNIVERSE[N])-11}" text-anchor="end" class="axis herolabel fadein" style="fill:#1F6B4A">&#9650; ${fmtM(UNIVERSE[N])} &middot; ${fmtN(PRESENT[N])} ADVISERS</text>
+    <text x="${X(0)}" y="${Y(UNIVERSE[0])-11}" class="axis herosub fadein" style="fill:#5C6560">${fmtM(UNIVERSE[0])} &middot; ${fmtN(PRESENT[0])} IN ${YEARS[0]}</text></svg>`;
+}
+
+function renderHome(){
+  const co=DATA.cohort, B=co.buckets;
+  const grad=B.graduated||{n:0,aum_start_musd:0,aum_end_musd:0};
+  const tracked=co.aum_end_musd/co.aum_start_musd;
+  sec(`<p class="eyebrow">WHAT THEY MANAGE &middot; HOW FAST IT GREW &middot; HOW MUCH OF IT THEY WON</p>
+  <h1>${fmtM(TOTAL)} across ${fmtN(FIRMS.length)} advisers.</h1>
+  <div class="hero">${heroSVG()}</div>
+  <p class="srcline">&#10003; SOURCE: SEC FORM ADV PART 1, ITEM 5.F(2)(c) &middot; ${META.periods.length} ANNUAL FULL FILES, ${META.periods[0]} TO ${filedOn()} &middot; BUILT ${META.generated.slice(0,10)}</p>`);
+
+  kpis([
+    {k:"Total regulatory AUM",v:fmtM(TOTAL),s:"&#10003; Item 5.F(2)(c), latest filing"},
+    {k:"Advisers in universe",v:fmtN(FIRMS.length),s:"&#10003; of "+fmtN(META.counts.registered_latest)+" SEC-registered"},
+    {k:"Median adviser",v:fmtM(MEDIAN),s:"&#10003; full-history firms only"},
+    {k:"Client accounts",v:fmtN(TOTACCT),s:"&#10003; Item 5.F(2)(f)"},
+    {k:"People employed",v:fmtN(TOTEMP),s:"&#10003; Item 5.A"},
+    {k:"Median organic growth",v:fmtPct(MEDIAN_ORG)+"/yr",c:MEDIAN_ORG<0?"risk":"gain",
+     s:"&#9673; derived &middot; "+fmtN(FULL.length)+" full-history firms"}
+  ]);
+
+  const sv=co.survivors, lr=co.left_register;
+  sec(`<p class="lede">This is every investment adviser registered with the SEC whose most recent Form ADV reports between ${fmtM(META.screen.min_aum_usd/1e6)} and ${fmtM(META.screen.max_aum_usd/1e6)} in regulatory assets, minus the private fund managers. ${fmtN(FIRMS.length)} firms, ${fmtM(TOTAL)}. Every AUM, account and employee figure on this site is a value one of them filed with the SEC under Item 5 of Form ADV Part 1.</p>
+  <p class="lede">The interesting question is not how much they manage. It is how much of the growth they earned, and the honest answer comes as a range rather than a number. Over ${co.base_period.slice(0,4)} to ${co.end_period.slice(0,4)} the blended benchmark compounded <b>${co.benchmark_multiple.toFixed(2)}x</b>. The ${fmtN(co.n_start)} advisers in this band at the start grew <b>${tracked.toFixed(2)}x</b> if you count the ${fmtN(lr.n)} that stopped filing as zero, and <b>${sv.multiple.toFixed(2)}x</b> if you look only at the ${fmtN(sv.n)} still filing today. The truth sits between those two, and where it sits depends entirely on who absorbed the ${fmtM(lr.aum_start_musd)} that left the register.</p>`);
+
+  sec(`<div class="lesson"><div class="k">THE FINDING, STATED AS A RANGE</div>
+  <p>Survivors beat the market ${sv.multiple.toFixed(2)}x to ${co.benchmark_multiple.toFixed(2)}x, and they did it by absorbing the firms that vanished. ${fmtN(lr.n)} advisers holding ${fmtM(lr.aum_start_musd)} stopped filing altogether. Almost none of that was liquidation; it was acquisition. Strip out consolidation and there is very little left that looks like organic growth anywhere in this industry.</p></div>
+  <p class="mutednote">Two structural effects distort any sum taken across this universe, and both are measured rather than waved at. The <b>ceiling</b>: ${fmtN(grad.n)} advisers grew straight through ${fmtM(META.screen.max_aum_usd/1e6)} and out of the index, taking ${fmtM(grad.aum_start_musd)} with them and turning it into ${fmtM(grad.aum_end_musd)}. The <b>register</b>: deregistered advisers count as zero at the end even though their assets moved to an acquirer. Per-adviser figures have neither problem, because each firm's flows come from its own filings alone. <a href="#/ceiling" id="ceilgo" style="color:#2F5D6B">See the full cohort study &rarr;</a></p>`);
+  const cg=document.getElementById("ceilgo"); if(cg) cg.onclick=e=>{e.preventDefault();go("ceiling");};
+
+  sec(`<h2>Every year, split in two</h2>`);
+  splitBar(app,co.series.slice(1).map(r=>({
+    label:r.period.slice(0,4)+"   (bench "+fmtPct(BENCH[co.series.indexOf(r)])+")",
+    a:r.market, b:r.flows})),{pl:230,rowH:30});
+  sec(`<div class="legend" style="margin-top:2px">
+    <span class="lg"><i style="background:#A9B2AC"></i>MARKET APPRECIATION</span>
+    <span class="lg"><i style="background:#1F6B4A"></i>NET NEW ASSETS</span>
+    <span class="lg"><i style="background:#A8322A"></i>NET OUTFLOWS</span></div>
+  <p class="cap">The ${fmtN(co.n_start)} advisers in the band in ${co.base_period}, tracked through every later filing regardless of what band they ended up in. In a year the benchmark falls, the market bar goes negative and the flows bar shows whether clients kept funding through it. <span class="method">&#9673; DERIVED &middot; market leg = prior-year AUM &times; blended benchmark. Flows are the residual and absorb every error in that assumption, including the fact that advisers who deregistered mid-period drop out and take their assets with them.</span></p>
+  <div class="formula">for each adviser, each linked year:
+  market_leg = AUM[t-1] * benchmark[t] / 100
+  net_flows  = AUM[t] - AUM[t-1] - market_leg
+
+benchmark[t] = ${(DATA.benchmark.equity_weight*100).toFixed(0)}% equity + ${(DATA.benchmark.bond_weight*100).toFixed(0)}% bonds
+  equity = FRED SP500 price return + ${DATA.benchmark.dividend_addback_pct}% dividend add-back
+  bond   = FRED DGS10, duration approximation at ${DATA.benchmark.bond_duration_years} years</div>
+  <p class="cap">${YEARS.slice(1).map((y,i)=>y+" "+fmtPct(BENCH[i+1])).join(" &middot; ")}</p>`);
+
+  sec(`<h2>The whole universe, by adviser size</h2>`);
+  stackedArea(app,{labels:YEARS,h:370,series:COHORTS.slice().reverse().map(c=>({
+    name:c.k,color:c.color,data:YEARS.map((y,t)=>+FIRMS.reduce((a,f)=>{
+      const v=f.aum[t]; return a+((v!=null&&v>=c.lo&&v<c.hi)?v:0);},0).toFixed(0))}))});
+  sec(`<div class="legend" style="margin-top:2px">${COHORTS.slice().reverse().map(c=>`<span class="lg"><i style="background:${c.color}"></i>${c.k}</span>`).join("")}</div>
+  <p class="cap">The ${fmtN(FIRMS.length)} advisers in today's universe, with each one assigned to a size band in each year independently, so a firm crossing $1B moves up the stack. Only ${fmtN(PRESENT[0])} of them were above $100M in ${YEARS[0]}, which is why the stack thickens from the bottom. <span class="method">&#10003; FILED &middot; one observation per adviser per annual full file, no interpolation.</span></p>`);
+
+  sec(`<h2>Organic growth by size band</h2>`);
+  const med=a=>{const x=a.filter(v=>v!=null).sort((p,q)=>p-q); if(!x.length)return 0;
+    return +(x.length%2?x[x.length>>1]:(x[(x.length>>1)-1]+x[x.length>>1])/2).toFixed(2);};
+  const cohortStats=COHORTS.map(c=>{
+    const set=FULL.filter(f=>f.now>=c.lo&&f.now<c.hi);
+    return {...c,n:set.length,med:med(set.map(f=>f.orgCagr))};});
+  barChart(app,cohortStats.map(c=>({label:c.k+"  ("+fmtN(c.n)+" firms)",value:c.med,
+    color:c.med<0?"#A8322A":"#1F6B4A",onClick:()=>go("cohorts")})),{fmt:v=>fmtPct(v)+"/yr",pl:250,rowH:30});
+  sec(`<p class="cap">Median annual net new assets as a share of average AUM, by current size band, across the ${fmtN(FULL.length)} advisers present in all ${YEARS.length} filings. Universe median ${fmtPct(MEDIAN_ORG)}. Medians survive the ceiling problem in a way sums do not, because each adviser's own number is computed from its own filings. <span class="method">&#9673; DERIVED. Medians, not means, because a handful of acquirers would otherwise drag the average.</span></p>`);
+
+  sec(`<h2>The 300 largest, size against organic growth</h2>`);
+  const top=FULL.slice(0,300).filter(f=>f.orgCagr!=null);
+  scatter(app,top.map(f=>({name:f.name,x:f.now,y:Math.max(-25,Math.min(35,f.orgCagr)),
+    r:Math.max(f.acctNow||1,1),color:cohortOf(f.now).color,onClick:()=>go("firm/"+f.crd)})),{h:400});
+  sec(`<p class="cap">Each bubble is one adviser: horizontal is regulatory AUM on a log scale, vertical is derived organic growth, size is client accounts. Clipped to &plusmn;35 percent so a handful of acquirers do not flatten everyone else. Click any bubble to open the filing detail. <span class="method">&#9673; DERIVED vertical axis, &#10003; FILED horizontal axis and bubble size.</span></p>`);
+
+  const movers=FULL.filter(f=>f.now>=250&&f.orgCagr!=null).sort((a,b)=>b.orgCagr-a.orgCagr);
+  sec(`<h2>Fastest organic growth, ${fmtM(250)}+</h2>`);
+  tiles(movers.slice(0,9));
+  sec(`<p class="cap">Ranked by derived organic growth among advisers over ${fmtM(250)} with a complete ${YEARS.length}-filing history. <span class="method">&#9888; An adviser that bought another practice appears here as organic growth. Form ADV's acquired-firm field is populated by only 16 of ${fmtN(META.counts.registered_latest)} filers, so it cannot be used to screen them out.</span></p>`);
+
+  const bleed=FULL.filter(f=>f.now>=250&&f.fcTotal<0&&f.growth>0).sort((a,b)=>a.fcTotal-b.fcTotal);
+  sec(`<h2>Rising AUM, departing clients</h2>`);
+  tiles(bleed.slice(0,9));
+  sec(`<p class="cap">${fmtN(bleed.length)} advisers over ${fmtM(250)} show more total AUM today than at their first filing while their derived net client flows over the period are negative. The market covered the difference. <span class="method">&#9673; DERIVED. Against a benchmark that compounded ${co.benchmark_multiple.toFixed(2)}x, standing still in dollar terms is a large negative flow, and this list should be read as "grew slower than the market", not as "clients fled".</span></p>`);
+
+  sec(`<h2>The one-line thesis</h2>
+  <p class="lede">A rising AUM line proves the market went up. It does not prove anyone chose you. Across ${co.series.length-1} years, the median adviser in every single size band grew slower than the blended benchmark, while aggregate assets in every band roughly doubled. Both are true because the growth is concentrated in a few hundred acquirers. For most of this industry the last decade was the same money, worth more, changing hands.</p>
+  <div class="lesson"><div class="k">HOW TO READ EVERY NUMBER HERE</div>
+  <p>AUM is filed and it is a fact. AUM growth is filed and it is nearly meaningless on its own. The share of that growth which was net new assets is derived, imperfect, and the only figure on this site that describes the business rather than the weather.</p></div>`);
+  pager(0);
+}
+
+function renderCeiling(){
+  const co=DATA.cohort, B=co.buckets;
+  const g=B.graduated||{n:0,aum_start_musd:0,aum_end_musd:0};
+  const st=B.still_in_band||{n:0,aum_start_musd:0,aum_end_musd:0};
+  const fb=B.fell_below||{n:0,aum_start_musd:0,aum_end_musd:0};
+  const dr=B.deregistered||{n:0,aum_start_musd:0,aum_end_musd:0};
+  sec(`<p class="eyebrow q">THE CEILING &middot; WHY THE INDEX UNDERSTATES ITSELF</p>
+  <h1>Success leaves the index.</h1>
+  <p class="lede">This is the methodological problem at the centre of any "boutique" index, stated in full rather than buried. A band with a top to it does not just describe small firms. It systematically removes the ones that stopped being small, and keeps the ones that shrank into range.</p>`);
+
+  const sv=co.survivors, lr=co.left_register;
+  kpis([
+    {k:"Cohort at "+co.base_period,v:fmtN(co.n_start),s:"&#10003; in band at the first filing"},
+    {k:"Their AUM then",v:fmtM(co.aum_start_musd),s:"&#10003; Item 5.F(2)(c), "+co.base_period},
+    {k:"Benchmark",v:co.benchmark_multiple.toFixed(2)+"x",c:"mkt",s:"&#9673; blended, "+co.base_period.slice(0,4)+" to "+co.end_period.slice(0,4)},
+    {k:"Lower bound",v:(co.aum_end_musd/co.aum_start_musd).toFixed(2)+"x",c:"risk",
+     s:"&#9673; deregistrations counted as zero"},
+    {k:"Upper bound",v:sv.multiple.toFixed(2)+"x",c:"gain",
+     s:"&#9673; the "+fmtN(sv.n)+" advisers still filing"},
+    {k:"Left the register",v:fmtN(lr.n),s:"&#10003; holding "+fmtM(lr.aum_start_musd)+" at "+co.base_period}
+  ]);
+
+  sec(`<div class="lesson"><div class="k">WHY THERE ARE TWO NUMBERS AND NOT ONE</div>
+  <p>When an adviser is acquired it stops filing, and this data has no way to follow its assets onto the buyer's Form ADV. Count those advisers as zero and the cohort grew ${(co.aum_end_musd/co.aum_start_musd).toFixed(2)}x, which understates by every dollar that was bought rather than lost. Count only the survivors and it grew ${sv.multiple.toFixed(2)}x, which overstates by every dollar they absorbed from a firm that is being counted as zero in the other number. The benchmark returned ${co.benchmark_multiple.toFixed(2)}x. Any site that gives you one figure here is hiding the harder half.</p></div>`);
+
+  sec(`<h2>What happened to the ${fmtN(co.n_start)}</h2>`);
+  const rows=[
+    {k:"Graduated above "+fmtM(META.screen.max_aum_usd/1e6),d:g,color:"#1F6B4A"},
+    {k:"Still in the band",d:st,color:"#2F5D6B"},
+    {k:"Fell below "+fmtM(META.screen.min_aum_usd/1e6),d:fb,color:"#8A6412"},
+    {k:"Deregistered or acquired",d:dr,color:"#A8322A"}];
+  barChart(app,rows.flatMap(r=>[
+    {label:r.k+"  ("+fmtN(r.d.n)+" firms)",value:r.d.aum_start_musd,color:r.color},
+    {label:"↳ "+co.end_period.slice(0,4),value:r.d.aum_end_musd,color:r.color,dim:true}
+  ]),{fmt:fmtM,pl:290,rowH:24});
+  sec(`<p class="cap">Top bar is the group's AUM at ${co.base_period}, the dim bar below is the same group at ${co.end_period}. The graduates started with ${(g.aum_start_musd/co.aum_start_musd*100).toFixed(0)} percent of the cohort's assets and finished with ${fmtM(g.aum_end_musd)}, more than the entire surviving universe. <span class="method">&#10003; FILED &middot; both endpoints read from Form ADV Item 5.F(2)(c). Deregistered firms show zero because they no longer file, not because the assets vanished; most were acquired and the assets moved to the acquirer's filing.</span></p>`);
+
+  sec(`<h2>The cohort, tracked forward</h2>`);
+  lineChart(app,{labels:co.series.map(r=>r.period.slice(0,4)),fromZero:true,yFmt:fmtM,
+    series:[{name:"The "+co.base_period.slice(0,4)+" cohort, wherever it went",color:"#12191F",data:co.series.map(r=>r.aum),w:2.8},
+            {name:"Today's index universe",color:"#A9B2AC",data:UNIVERSE,dash:"5 4",w:2},
+            {name:"The cohort at benchmark",color:"#1F6B4A",dash:"3 3",w:1.8,
+             data:co.series.map((r,i)=>{let v=co.series[0].aum;for(let t=1;t<=i;t++)v*=1+BENCH[t]/100;return +v.toFixed(0);})}]});
+  sec(`<p class="cap">Three lines worth keeping apart. Black is the ${co.base_period.slice(0,4)} cohort followed wherever its members went. Green is what that cohort would be worth if every dollar had simply earned the blended benchmark and no client had ever added or withdrawn a cent. Grey is what this site's universe looks like today, which is a different and much smaller set of firms. Black tracking green almost exactly is the whole story.</p>`);
+
+  sec(`<h2>The ${fmtN((DATA.cohort.graduates||[]).length)} largest graduates</h2>`);
+  const wrap=node(`<div class="tblwrap"><table><thead><tr><th>Adviser</th>
+    <th style="text-align:right">${co.base_period.slice(0,4)} AUM</th>
+    <th style="text-align:right">${co.end_period.slice(0,4)} AUM</th>
+    <th style="text-align:right">Multiple</th><th style="text-align:right">CRD</th>
+    </tr></thead><tbody></tbody></table></div>`);
+  wrap.querySelector("tbody").innerHTML=(DATA.cohort.graduates||[]).map(r=>`<tr>
+    <td class="nm" style="cursor:default">${r[1]} <span style="color:#5C6560;font-weight:400;font-size:12px">${r[2]||""}${r[3]?", "+r[3]:""}</span></td>
+    <td class="num">${fmtM(r[4])}</td><td class="num">${fmtM(r[5])}</td>
+    <td class="num pos">${(r[5]/r[4]).toFixed(1)}x</td>
+    <td class="num"><a href="https://adviserinfo.sec.gov/firm/summary/${r[0]}" target="_blank" rel="noopener">${r[0]}</a></td></tr>`).join("");
+  app.appendChild(wrap);
+  sec(`<p class="cap">These advisers are not in the index and never will be again. They are shown here because leaving them out of the aggregate silently is exactly the error this page exists to prevent. <span class="method">&#9888; READ THESE MULTIPLES WITH CARE. Both endpoints are filed values, but a 300x move is not a firm that grew 300 times. Form ADV registrations get restructured: an existing book of business moves onto a new or different legal entity, and the receiving CRD shows an enormous jump that never happened as growth. Roll-up acquirers show the same pattern for a different reason. Form ADV does not distinguish any of these from organic growth, and neither can this site.</span></p>
+  <div class="lesson"><div class="k">THE RULE THIS SITE FOLLOWS</div>
+  <p>Per-adviser numbers come from that adviser's own filings and are unaffected by the ceiling. Any number summed across the universe is computed on the ${co.base_period.slice(0,4)} cohort instead, and says so. A boutique index that sums its survivors and calls the result an industry trend is measuring its own screen.</p></div>`);
+  pager(2);
+}
+
+function tiles(list){
+  const g=document.createElement("div"); g.className="tiles";
+  list.forEach(f=>{
+    const t=node(`<button class="tile">
+      <span class="sp">${f.city||"&mdash;"}${f.state?", "+f.state:""} &middot; CRD ${f.crd} &middot; RANK ${fmtN(f.rank)}</span>
+      <span class="nm">${f.name}</span>
+      <span class="aum">${fmtM(f.now)}</span>
+      <span class="gr" style="color:${(f.orgCagr||0)<0?"#A8322A":"#1F6B4A"}">
+        ${f.orgCagr==null?"NO LINKED HISTORY":fmtPct(f.orgCagr)+"/YR ORGANIC &middot; "+(f.fcTotal<0?"NET OUTFLOWS "+fmtM(f.fcTotal):f.earned+"% OF GROWTH EARNED")}</span>
+      <span class="tl">${fmtN(f.acctNow||0)} accounts &middot; ${f.emp||0} staff &middot; ${f.disc}% discretionary</span>
+      ${sparkline(f)}</button>`);
+    t.onclick=()=>go("firm/"+f.crd); g.appendChild(t);
+  });
+  app.appendChild(g);
+}
+
+function sparkline(f){
+  const W=240,H=36, pts=f.aum.map((v,i)=>[i,v]).filter(p=>p[1]!=null);
+  const lo=Math.min(...pts.map(p=>p[1])), hi=Math.max(...pts.map(p=>p[1]));
+  const X=i=>i*W/(YEARS.length-1), Y=v=>H-3-(v-lo)/((hi-lo)||1)*(H-8);
+  let d=""; pts.forEach((p,i)=>{d+=(i?"L":"M")+X(p[0]).toFixed(1)+" "+Y(p[1]).toFixed(1)+" ";});
+  let neg=""; for(let t=1;t<YEARS.length;t++) if(f.fc[t]!=null&&f.fc[t]<0&&f.aum[t-1]!=null)
+    neg+=`M${X(t-1).toFixed(1)} ${Y(f.aum[t-1]).toFixed(1)} L${X(t).toFixed(1)} ${Y(f.aum[t]).toFixed(1)} `;
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">
+    <path d="${d}" fill="none" stroke="${f.color}" stroke-width="1.9" stroke-linejoin="round"/>
+    <path d="${neg}" fill="none" stroke="#A8322A" stroke-width="2.8" stroke-linecap="round"/></svg>`;
+}
+
+function renderCohorts(){
+  const co=DATA.cohort, bands=co.by_start_band;
+  const worst=bands[0], best=bands[bands.length-1];
+  sec(`<p class="eyebrow q">BY SIZE &middot; THE ${fmtN(co.n_start)}-ADVISER ${co.base_period.slice(0,4)} COHORT, TRACKED FORWARD</p>
+  <h1>The median adviser lost to the market.</h1>
+  <p class="lede">Advisers are banded by what they filed at the <b>start</b> of the period, not by where they ended up, and then followed through every later filing regardless of which band they landed in. Banding on today's AUM would sort firms by the very outcome being measured, and doing so reverses this result completely.</p>
+  <p class="mutednote">This is the one page where the size analysis is clean. The screener and the index universe are defined by the latest filing and therefore inherit the ceiling problem described on <a href="#/ceiling" id="cg2" style="color:#2F5D6B">The Ceiling</a>.</p>`);
+  const c2=document.getElementById("cg2"); if(c2) c2.onclick=e=>{e.preventDefault();go("ceiling");};
+
+  sec(`<h2>Median organic growth by starting size</h2>`);
+  barChart(app,bands.map(b=>({label:b.band+"  ("+fmtN(b.n)+" advisers)",value:b.median_organic,
+    color:b.median_organic<0?"#A8322A":"#1F6B4A"})),{fmt:v=>fmtPct(v)+"/yr",pl:270,rowH:30});
+  sec(`<p class="cap">Every band is negative, and the larger the adviser was at the start, the further behind the benchmark its median member finished. <span class="method">&#9673; DERIVED &middot; "organic growth" here means AUM growth in excess of the blended benchmark. A negative number does not prove clients withdrew: an adviser holding more cash or shorter bonds than the benchmark will read negative even with steady inflows. That is the assumption, and the panel below lets you change it.</span></p>`);
+
+  sec(`<h2>Test the assumption yourself</h2>
+  <p>Every derived number on this site rests on one input: the equity weight of the benchmark applied to each adviser's whole book. Form ADV Part 1 does not disclose asset allocation, so this cannot be measured, only assumed. Rather than assert one, move it.</p>`);
+  const panel=node(`<div class="chartbox" style="padding:16px 18px">
+    <div class="tools" style="margin:0 0 12px">
+      <label class="hits" for="ew" style="letter-spacing:.12em">EQUITY WEIGHT</label>
+      <input id="ew" type="range" min="0" max="100" step="5" value="${Math.round(DATA.benchmark.equity_weight*100)}" style="flex:1 1 200px">
+      <span class="hits" id="ewv"></span></div>
+    <div class="kpis" id="ewk" style="margin:0"></div>
+    <p class="cap" id="ewnote"></p></div>`);
+  app.appendChild(panel);
+  const ew=panel.querySelector("#ew"), neutral=neutralWeight(FULL);
+  function paintEW(){
+    const w=+ew.value/100, st=statsAt(w,FULL);
+    panel.querySelector("#ewv").textContent=`${ew.value}% equity / ${100-ew.value}% bonds`;
+    panel.querySelector("#ewk").innerHTML=[
+      {k:"Benchmark, "+YEARS[0]+" to "+YEARS[YEARS.length-1],v:st.mult.toFixed(2)+"x"},
+      {k:"Median organic growth",v:fmtPct(st.med)+"/yr",c:st.med<0?"risk":"gain"},
+      {k:"Advisers below the benchmark",v:st.negPct+"%",c:st.negPct>50?"risk":"gain"},
+      {k:"Interquartile range",v:fmtPct(st.p25)+" to "+fmtPct(st.p75)}
+    ].map(i=>`<div class="kpi"><div class="k">${i.k}</div><div class="v ${i.c||""}">${i.v}</div></div>`).join("");
+    panel.querySelector("#ewnote").innerHTML=
+      `At an equity weight of <b>${(neutral*100).toFixed(1)} percent</b> the median adviser in this universe comes out exactly flat. Below that weight the median adviser reads as a net winner of assets, above it as a net loser. The site ships at ${(DATA.benchmark.equity_weight*100).toFixed(0)} percent, a conventional balanced mandate, which lands within ${Math.abs(DATA.benchmark.equity_weight*100-neutral*100).toFixed(1)} points of neutral. Read that as the finding rather than a coincidence: over this period the median boutique RIA's assets behaved almost exactly like an unmanaged ${(neutral*100).toFixed(0)}/${(100-neutral*100).toFixed(0)} portfolio that nobody added to and nobody withdrew from. Whichever weight you choose, treat the <i>ranking</i> of advisers as far more reliable than the <i>level</i>, because moving this slider moves everyone together.`;
+  }
+  ew.oninput=paintEW; paintEW();
+
+  sec(`<h2>The full band table</h2>`);
+  const wrap=node(`<div class="tblwrap"><table><thead><tr>
+    <th>Starting band (${co.base_period.slice(0,4)})</th><th style="text-align:right">Advisers</th>
+    <th style="text-align:right">AUM then</th><th style="text-align:right">AUM now</th>
+    <th style="text-align:right">Multiple</th><th style="text-align:right">Median organic</th>
+    <th style="text-align:right">25th</th><th style="text-align:right">75th</th>
+    <th style="text-align:right">Below benchmark</th><th style="text-align:right">Graduated</th>
+    <th style="text-align:right">Deregistered</th></tr></thead><tbody></tbody></table></div>`);
+  wrap.querySelector("tbody").innerHTML=bands.map(b=>`<tr>
+    <td class="nm" style="cursor:default">${b.band}</td><td class="num">${fmtN(b.n)}</td>
+    <td class="num">${fmtM(b.aum_start_musd)}</td><td class="num">${fmtM(b.aum_end_musd)}</td>
+    <td class="num">${(b.aum_end_musd/b.aum_start_musd).toFixed(2)}x</td>
+    <td class="num ${b.median_organic<0?"neg":"pos"}">${fmtPct(b.median_organic)}</td>
+    <td class="num ${b.p25_organic<0?"neg":"pos"}">${fmtPct(b.p25_organic)}</td>
+    <td class="num ${b.p75_organic<0?"neg":"pos"}">${fmtPct(b.p75_organic)}</td>
+    <td class="num ${b.net_sellers_pct>50?"neg":"pos"}">${b.net_sellers_pct}%</td>
+    <td class="num">${fmtN(b.graduated)}</td><td class="num">${fmtN(b.deregistered)}</td></tr>`).join("");
+  app.appendChild(wrap);
+  sec(`<p class="cap">"Multiple" is aggregate AUM then against aggregate AUM now for the same set of advisers, against a benchmark of ${co.benchmark_multiple.toFixed(2)}x. Note the gap between that column and the median column: aggregate AUM roughly kept pace while the median member fell behind. <span class="method">&#10003; Advisers, AUM, graduated and deregistered counts FILED. &#9673; Organic percentiles DERIVED at the ${(DATA.benchmark.equity_weight*100).toFixed(0)}% equity weight.</span></p>`);
+
+  sec(`<div class="lesson"><div class="k">WHAT THE BAND TABLE ACTUALLY SAYS</div>
+  <p>Aggregate assets in every band roughly doubled while the median adviser in every band fell behind the market. Both are true at once because the growth is concentrated: ${fmtN(co.buckets.graduated.n)} advisers out of ${fmtN(co.n_start)} took ${fmtM(co.buckets.graduated.aum_start_musd)} and turned it into ${fmtM(co.buckets.graduated.aum_end_musd)}. The typical boutique RIA did not have a good decade. The industry, in aggregate, looks like it did.</p></div>`);
+  pager(3);
+}
+
+function renderStates(){
+  const top=STATES.filter(s=>s.state!=="--").slice(0,30);
+  sec(`<p class="eyebrow q">BY STATE &middot; PRINCIPAL OFFICE ADDRESS ON FORM ADV</p>
+  <h1>Where the money is.</h1>
+  <p class="lede">Regulatory AUM by the state of each adviser's principal office. This is where the firm sits, not where its clients do.</p>`);
+  barChart(app,top.map(s=>({label:s.state+"  ("+fmtN(s.n)+" firms)",value:+s.aum.toFixed(0),
+    color:"#2F5D6B",onClick:()=>{SCR.state=s.state; go("screener");}})),{fmt:fmtM,pl:200,rowH:23});
+  sec(`<p class="cap">Top 30 states by total boutique AUM. Click a bar to filter the screener. <span class="method">&#10003; FILED &middot; Form ADV Part 1 Item 1.F principal office address. ${fmtN((STATES.find(s=>s.state==="--")||{n:0}).n)} advisers report no usable state in any filing and are excluded from this chart only.</span></p>`);
+
+  sec(`<h2>Concentration and momentum by state</h2>`);
+  const wrap=node(`<div class="tblwrap"><table><thead><tr>
+    <th>State</th><th style="text-align:right">Advisers</th><th style="text-align:right">Total AUM</th>
+    <th style="text-align:right">Share of universe</th><th style="text-align:right">Avg adviser</th>
+    <th style="text-align:right">Net flows</th><th style="text-align:right">Market</th>
+    <th style="text-align:right">% earned</th><th style="text-align:right">Accounts</th>
+    </tr></thead><tbody></tbody></table></div>`);
+  wrap.querySelector("tbody").innerHTML=top.map(s=>{
+    const earned=(s.fc+s.mc)?Math.round(s.fc/(s.fc+s.mc)*100):0;
+    return `<tr><td class="nm" data-st="${s.state}">${s.state}</td>
+      <td class="num">${fmtN(s.n)}</td><td class="num">${fmtM(s.aum)}</td>
+      <td class="num">${(s.aum/TOTAL*100).toFixed(1)}%</td><td class="num">${fmtM(s.aum/s.n)}</td>
+      <td class="num ${s.fc<0?"neg":"pos"}">${fmtMs(s.fc)}</td><td class="num">${fmtMs(s.mc)}</td>
+      <td class="num ${earned<0?"neg":"pos"}">${earned}%</td><td class="num">${fmtN(s.acct)}</td></tr>`;}).join("");
+  wrap.querySelectorAll("td.nm").forEach(td=>td.onclick=()=>{SCR.state=td.dataset.st; go("screener");});
+  app.appendChild(wrap);
+  sec(`<p class="cap">"% earned" is net flows as a share of total AUM change in that state. <span class="method">&#10003; Advisers, AUM and accounts FILED. &#9673; Flows, market and % earned DERIVED.</span></p>`);
+  pager(4);
+}
+
+/* ---------------- screener: search, filter, sort, paginate --------------- */
+const SCR={q:"",state:"",band:"",sort:"now",asc:false,page:0,per:50};
+function renderScreener(){
+  sec(`<p class="eyebrow q">SCREENER &middot; ALL ${fmtN(FIRMS.length)} ADVISERS</p>
+  <h1>The whole universe.</h1>
+  <p class="lede">Search by name, city or CRD. Click a column to sort, click a name to open the adviser's filing detail.</p>`);
+  const tools=node(`<div class="tools">
+    <input type="search" id="scrq" placeholder="Name, city or CRD" value="${SCR.q.replace(/"/g,"&quot;")}">
+    <select id="scrstate"><option value="">All states</option>${
+      STATES.filter(s=>s.state!=="--").map(s=>`<option value="${s.state}"${SCR.state===s.state?" selected":""}>${s.state} (${fmtN(s.n)})</option>`).join("")}</select>
+    <select id="scrband"><option value="">All sizes</option>${
+      COHORTS.map(c=>`<option value="${c.k}"${SCR.band===c.k?" selected":""}>${c.k}</option>`).join("")}</select>
+    <span class="hits" id="scrhits"></span></div>`);
+  app.appendChild(tools);
+
+  const cols=[
+    {k:"name",   t:"Adviser",        s:false},
+    {k:"now",    t:"Regulatory AUM", f:fmtM},
+    {k:"cagr",   t:"AUM CAGR",       f:v=>v==null?"&mdash;":fmtPct(v), sign:true},
+    {k:"orgCagr",t:"Organic /yr",    f:v=>v==null?"&mdash;":fmtPct(v), sign:true},
+    {k:"earned", t:"% earned",       f:v=>v==null?"&mdash;":v+"%",     sign:true},
+    {k:"fcTotal",t:"Net flows",      f:fmtMs, sign:true},
+    {k:"mcTotal",t:"Market",         f:fmtMs},
+    {k:"acctNow",t:"Accounts",       f:v=>v?fmtN(v):"&mdash;"},
+    {k:"perAcct",t:"$ / account",    f:v=>v?"$"+fmtN(v)+"k":"&mdash;"},
+    {k:"emp",    t:"Staff",          f:v=>v||"&mdash;"},
+    {k:"perEmp", t:"AUM / head",     f:v=>v?fmtM(v):"&mdash;"},
+    {k:"disc",   t:"Discretionary",  f:v=>v+"%"},
+    {k:"span",   t:"Filings linked", f:v=>v+1+" of "+YEARS.length}];
+  const wrap=node(`<div class="tblwrap"><table><thead><tr></tr></thead><tbody></tbody></table></div>`);
+  const tr=wrap.querySelector("thead tr"), tb=wrap.querySelector("tbody");
+  cols.forEach(c=>{const th=document.createElement("th"); th.textContent=c.t;
+    if(c.s!==false) th.style.textAlign="right";
+    th.onclick=()=>{ if(SCR.sort===c.k) SCR.asc=!SCR.asc; else {SCR.sort=c.k; SCR.asc=(c.k==="name");}
+      SCR.page=0; paint(); };
+    tr.appendChild(th);});
+  app.appendChild(wrap);
+  const pagi=node(`<div class="pagi">
+    <button id="pfirst">&laquo; first</button><button id="pprev">&lsaquo; prev</button>
+    <span id="pinfo"></span><button id="pnext">next &rsaquo;</button><button id="plast">last &raquo;</button></div>`);
+  app.appendChild(pagi);
+
+  function filtered(){
+    const q=SCR.q.trim().toLowerCase();
+    const band=COHORTS.find(c=>c.k===SCR.band);
+    return FIRMS.filter(f=>
+      (!q || f.search.includes(q)) &&
+      (!SCR.state || f.state===SCR.state) &&
+      (!band || (f.now>=band.lo && f.now<band.hi)));
+  }
+  function paint(){
+    [...tr.children].forEach((th,i)=>{th.classList.toggle("sorted",cols[i].k===SCR.sort);th.classList.toggle("asc",SCR.asc);});
+    const list=filtered().sort((a,b)=>{
+      if(SCR.sort==="name") return a.label.localeCompare(b.label)*(SCR.asc?1:-1);
+      const x=a[SCR.sort], y=b[SCR.sort];
+      if(x==null) return 1; if(y==null) return -1;
+      return (x-y)*(SCR.asc?1:-1);});
+    const pages=Math.max(1,Math.ceil(list.length/SCR.per));
+    SCR.page=Math.min(SCR.page,pages-1);
+    const slice=list.slice(SCR.page*SCR.per,(SCR.page+1)*SCR.per);
+    tb.innerHTML="";
+    slice.forEach(f=>{const r=document.createElement("tr");
+      cols.forEach(c=>{const td=document.createElement("td");
+        if(c.k==="name"){td.className="nm";
+          td.innerHTML=`${f.name} <span style="color:#5C6560;font-weight:400;font-size:12px">${f.city||""}${f.state?", "+f.state:""}</span>`;
+          td.onclick=()=>go("firm/"+f.crd);}
+        else {td.className="num"; td.innerHTML=c.f(f[c.k]);
+          if(c.sign&&f[c.k]!=null) td.classList.add(f[c.k]>=0?"pos":"neg");}
+        r.appendChild(td);});
+      tb.appendChild(r);});
+    document.getElementById("scrhits").innerHTML=`${fmtN(list.length)} of ${fmtN(FIRMS.length)} &middot; ${fmtM(list.reduce((a,f)=>a+f.now,0))}`;
+    document.getElementById("pinfo").textContent=`page ${SCR.page+1} of ${fmtN(pages)}`;
+    pagi.querySelector("#pfirst").disabled=pagi.querySelector("#pprev").disabled=SCR.page===0;
+    pagi.querySelector("#pnext").disabled=pagi.querySelector("#plast").disabled=SCR.page>=pages-1;
+    pagi._pages=pages;
+  }
+  const go_=n=>{SCR.page=n; paint(); wrap.scrollIntoView({block:"start",behavior:"instant"});};
+  pagi.querySelector("#pfirst").onclick=()=>go_(0);
+  pagi.querySelector("#pprev").onclick =()=>go_(SCR.page-1);
+  pagi.querySelector("#pnext").onclick =()=>go_(SCR.page+1);
+  pagi.querySelector("#plast").onclick =()=>go_(pagi._pages-1);
+  let deb;
+  tools.querySelector("#scrq").oninput=e=>{clearTimeout(deb);
+    deb=setTimeout(()=>{SCR.q=e.target.value; SCR.page=0; paint();},140);};
+  tools.querySelector("#scrstate").onchange=e=>{SCR.state=e.target.value; SCR.page=0; paint();};
+  tools.querySelector("#scrband").onchange =e=>{SCR.band =e.target.value; SCR.page=0; paint();};
+  paint();
+  sec(`<p class="cap">"Filings linked" is how many of the ${YEARS.length} annual snapshots this adviser appears in above $100M. An adviser present in fewer has a shorter derived history and its organic rate is computed over that shorter window. <span class="method">&#10003; AUM, accounts, staff, discretionary share FILED. &#9673; Everything else DERIVED.</span></p>`);
+  pager(5);
+}
+
+function renderFirm(crd){
+  const f=BYCRD.get(+crd);
+  if(!f){ app.innerHTML=`<div class="failed"><h3>No adviser with CRD ${crd} in this universe</h3>
+    <p>Either the CRD is not SEC-registered, its regulatory AUM sits outside the ${fmtM(META.screen.min_aum_usd/1e6)} to ${fmtM(META.screen.max_aum_usd/1e6)} band, or it was screened out as a private fund manager. Look it up directly on
+    <a href="https://adviserinfo.sec.gov/firm/summary/${crd}" target="_blank" rel="noopener">SEC IAPD</a>.</p></div>`;
+    pager(5); return; }
+  const pres=f.aum.map((v,i)=>v==null?null:i).filter(v=>v!=null);
+  sec(`<p class="eyebrow">${f.city||"&mdash;"}${f.state?", "+f.state:""} &middot; CRD ${f.crd} &middot; RANK ${fmtN(f.rank)} OF ${fmtN(FIRMS.length)} BY AUM</p>
+  <h1>${f.name}</h1>
+  <p class="srcline">&#10003; SEC FORM ADV PART 1 &middot; FULL FILE ${filedOn()} &middot; <a href="https://adviserinfo.sec.gov/firm/summary/${f.crd}" target="_blank" rel="noopener">VIEW THE FILING ON IAPD</a></p>`);
+
+  kpis([
+    {k:"Regulatory AUM",v:fmtM(f.now),s:"&#10003; Item 5.F(2)(c)"},
+    {k:"AUM growth",v:f.cagr==null?"&mdash;":fmtPct(f.cagr)+"/yr",
+     s:"&#10003; "+fmtM(f.base)+" ("+YEARS[f.first]+") &rarr; "+fmtM(f.now)+" ("+YEARS[f.last]+")"},
+    {k:"Organic growth",v:f.orgCagr==null?"&mdash;":fmtPct(f.orgCagr)+"/yr",
+     c:(f.orgCagr||0)<0?"risk":"gain",s:"&#9673; net flows / average AUM"},
+    {k:f.fcTotal<0?"Net client flows":"Growth earned",
+     v:f.fcTotal<0?fmtM(f.fcTotal):(f.earned==null?"&mdash;":f.earned+"%"),
+     c:f.fcTotal<0?"risk":(f.earned>50?"gain":"mkt"),
+     s:"&#9673; "+fmtMs(f.fcTotal)+" flows vs "+fmtMs(f.mcTotal)+" market"}
+  ]);
+
+  lineChart(app,{labels:YEARS,area:true,fromZero:true,noLegend:true,yFmt:fmtM,
+    series:[{name:f.name,color:f.color,data:f.aum,w:2.8}]});
+  sec(`<p class="cap">Regulatory AUM at each annual Form ADV full file. ${f.full
+      ? "Present in all "+YEARS.length+" snapshots."
+      : "Present in "+pres.length+" of "+YEARS.length+" snapshots ("+pres.map(i=>YEARS[i]).join(", ")+"). Gaps are years this adviser was below $100M, above $5B, or not SEC-registered."}
+    <span class="method">&#10003; FILED &middot; no interpolation.</span></p>`);
+
+  sec(`<h2>Where each year's change came from</h2>`);
+  const rows=YEARS.slice(1).map((y,i)=>({label:y,a:f.mc[i+1],b:f.fc[i+1]}))
+                  .filter(r=>r.a!=null);
+  if(rows.length) splitBar(app,rows,{pl:110,rowH:29});
+  else sec(`<p class="mutednote">Not enough linked filings to decompose.</p>`);
+  sec(`<div class="legend" style="margin-top:2px">
+    <span class="lg"><i style="background:#A9B2AC"></i>MARKET APPRECIATION</span>
+    <span class="lg"><i style="background:#1F6B4A"></i>NET NEW ASSETS</span>
+    <span class="lg"><i style="background:#A8322A"></i>NET OUTFLOWS</span></div>
+  <p class="cap"><span class="method">&#9673; DERIVED &middot; market leg is the blended benchmark applied to the whole prior-year balance. Form ADV Part 1 does not disclose asset allocation, so no adviser-specific mix is used. Flows are the residual.</span></p>`);
+
+  sec(`<h2>The shape of the business</h2>`);
+  kpis([
+    {k:"Client accounts",v:f.acctNow?fmtN(f.acctNow):"&mdash;",
+     s:"&#10003; Item 5.F(2)(f)"+(f.acctBase?" &middot; from "+fmtN(f.acctBase)+" in "+YEARS[f.first]:"")},
+    {k:"AUM per account",v:f.perAcct?"$"+fmtN(f.perAcct)+"k":"&mdash;",s:"&#9673; AUM / accounts"},
+    {k:"Clients",v:f.clients?fmtN(f.clients):"&mdash;",s:"&#10003; Item 5.C(1)"},
+    {k:"Employees",v:f.emp||"&mdash;",s:"&#10003; Item 5.A &middot; "+(f.advemp||0)+" advisory"},
+    {k:"AUM per employee",v:f.perEmp?fmtM(f.perEmp):"&mdash;",s:"&#9673; operating leverage"},
+    {k:"Discretionary",v:f.disc+"%",s:"&#10003; Item 5.F(2)(a) of (c)"}
+  ]);
+  if(f.accts.some(v=>v!=null)){
+    lineChart(app,{labels:YEARS,fromZero:true,noLegend:true,h:250,
+      yFmt:v=>fmtN(Math.round(v)),tFmt:v=>fmtN(Math.round(v))+" accounts",
+      series:[{name:"Client accounts",color:"#2F5D6B",data:f.accts,w:2.4}]});
+    const ag=f.acctBase?(f.acctNow/f.acctBase-1)*100:null, mg=(f.now/f.base-1)*100;
+    sec(`<p class="cap">Account count against AUM is the cleanest available proxy for whether growth came from more clients or richer clients.${
+      ag==null?"":` Accounts moved ${fmtPct(ag)} while AUM moved ${fmtPct(mg)}, so the average relationship got ${ag>mg?"smaller":"larger"}.`} <span class="method">&#10003; FILED.</span></p>`);
+  }
+
+  sec(`<h2>&#9673; What the numbers say</h2>
+  <p>${f.name} filed ${fmtM(f.base)} in ${YEARS[f.first]} and ${fmtM(f.now)} in ${YEARS[f.last]}, a change of ${fmtMs(f.growth)}${f.cagr==null?"":" at "+fmtPct(f.cagr)+" a year"}. Splitting it across ${f.linked} linked ${f.linked===1?"year":"years"}: ${fmtMs(f.mcTotal)} attributed to market appreciation and ${fmtMs(f.fcTotal)} to net client flows.</p>
+  <p>${f.fcTotal>0
+    ? "That puts "+(f.earned==null?"most":f.earned+" percent")+" of the growth in the earned column, an organic rate of "+fmtPct(f.orgCagr)+" a year against a universe median of "+fmtPct(MEDIAN_ORG)+". "+
+      (f.orgCagr>MEDIAN_ORG*2 ? "That is well above the median for this universe, which also makes it the profile most likely to be an acquisition rather than pure client growth."
+       : f.orgCagr>MEDIAN_ORG ? "That is above the median for this universe: the firm is winning modestly more than it loses."
+       : "That is below the median for this universe. The market did most of the work.")
+    : "That means clients withdrew "+fmtM(Math.abs(f.fcTotal))+" more than they added over the period. "+
+      (f.growth>0 ? "Total AUM still rose, because the market rose faster than clients left. The headline number is hiding the story."
+                  : "Total AUM fell as well. Both lines pointed the same way and there was nothing to hide behind.")}</p>
+  <p>Operationally the firm reports ${f.acctNow?fmtN(f.acctNow)+" accounts":"no account count"} and ${f.clients?fmtN(f.clients)+" clients":"no client count"} across ${f.emp||0} employees${f.perEmp?", "+fmtM(f.perEmp)+" of AUM per head":""}, with ${f.disc} percent of assets managed on a discretionary basis.${f.pfPct>0?" Private fund gross assets are "+f.pfPct+" percent of regulatory AUM.":""}${f.acqs>0?" This adviser reports "+f.acqs+" acquired firm(s) on Form ADV.":""}</p>`);
+
+  sec(`<h2>&#10003; What the filings actually state</h2>`);
+  const v=document.createElement("div"); v.className="vcards";
+  v.innerHTML=`
+  <div class="vcard ok"><div class="vh">FORM ADV PART 1, ITEM 5.F &middot; FULL FILE ${filedOn()}</div>
+    Regulatory assets under management of ${fmtM(f.now)}, ${f.disc} percent discretionary${f.acctNow?", across "+fmtN(f.acctNow)+" accounts":""}. Principal office ${f.city||"not reported"}${f.state?", "+f.state:""}. CRD ${f.crd}.
+    <div class="arrow">&#8594; The only AUM figure on this page that is filed rather than computed.</div>
+    <span class="flag ok">&#10003; Self-reported to the SEC under the prescribed definition of regulatory AUM. Not audited by the SEC. Verify at <a href="https://adviserinfo.sec.gov/firm/summary/${f.crd}" target="_blank" rel="noopener">adviserinfo.sec.gov/firm/summary/${f.crd}</a>.</span></div>
+  <div class="vcard derived"><div class="vh">THE FLOWS SPLIT</div>
+    ${fmtMs(f.mcTotal)} to market, ${fmtMs(f.fcTotal)} to net flows, across ${f.linked} linked ${f.linked===1?"year":"years"}.
+    <div class="arrow">&#8594; Computed in your browser from the AUM series above and the published benchmark. Not filed by anyone.</div>
+    <span class="flag">&#9888; Assumes this adviser earned the blended benchmark on its whole book. If it beat the benchmark, this overstates flows; if it lagged, it understates them. An acquisition of another practice appears here as net new assets.</span></div>
+  <div class="vcard gap"><div class="vh">&#9888; NOT DISCLOSED BY THIS ADVISER OR ANY OTHER</div>
+    Performance, client retention, revenue, realized fee rate, asset allocation, which clients left and why.
+    <div class="arrow">&#8594; No figure on this page should be read as a statement about the quality of this adviser's work.</div>
+    <span class="flag">&#9888; Form ADV Part 2A carries a fee schedule. It is not multiplied by AUM anywhere on this site.</span></div>`;
+  app.appendChild(v);
+
+  sec(`<div class="lesson"><div class="k">READ THIS FIRM THIS WAY</div>
+  <p>${f.linked===0 ? "Only one filing links to another here, so there is no derived history to read. The AUM figure is filed and solid; everything else needs another year."
+    : f.fcTotal<0 ? "Ignore the AUM line. Clients have been net sellers across the linked period and the headline is propped up by the market. This is the case the site exists to make visible."
+    : f.earned>=60 ? "Most of the increase is money that chose to come here, which is the only kind of growth that survives a flat market. Check whether an acquisition explains it."
+    : f.earned>=30 ? "Mixed. The firm is winning assets, but the market did more of the work than the headline growth rate implies."
+    : "The headline growth rate is mostly the market. Strip it out and the business grew "+fmtPct(f.orgCagr)+" a year."}</p></div>`);
+  pager(5);
+}
+
+function renderMethod(){
+  const b=DATA.benchmark;
+  sec(`<p class="eyebrow q">METHODOLOGY &middot; WHAT IS FILED, WHAT IS DERIVED, WHAT IS DARK</p>
+  <h1>Show the seams.</h1>
+  <p class="lede">Most of the numbers on this site are values an adviser signed their name to on a federal form. A few are our arithmetic on top of them. They are marked differently everywhere, and the marks never get dropped for a cleaner layout.</p>
+  <p class="srcline">&#10003; ${META.source.adv} &middot; <a href="${META.source.adv_url}" target="_blank" rel="noopener">${META.source.adv_url}</a></p>
+  <p class="srcline">&#10003; ${META.source.market} &middot; <a href="${META.source.market_url}" target="_blank" rel="noopener">${META.source.market_url}</a></p>`);
+
+  sec(`<h2>The universe</h2>
+  <p>${META.screen.note}</p>
+  <div class="formula">SEC-registered advisers in the ${filedOn()} full file .... ${fmtN(META.counts.registered_latest)}
+  with regulatory AUM in [${fmtM(META.screen.min_aum_usd/1e6)}, ${fmtM(META.screen.max_aum_usd/1e6)}) and
+  private fund gross assets under ${(META.screen.max_private_fund_share*100).toFixed(0)}% of AUM ........ ${fmtN(META.counts.universe)}
+
+Annual snapshots joined on Organization CRD# ...... ${META.periods.length}
+  ${META.periods.join("  ")}
+Advisers present in every snapshot ................ ${fmtN(FULL.length)}</div>`);
+
+  sec(`<h2>The three provenance marks</h2>`);
+  const v=document.createElement("div"); v.className="vcards";
+  v.innerHTML=`
+  <div class="vcard ok"><div class="vh">&#10003; FILED &middot; FORM ADV PART 1, ITEM 5.F</div>
+    Regulatory assets under management, split discretionary and non-discretionary, with account counts for each. Filed at least annually within 90 days of fiscal year end and amended when AUM changes materially.
+    <div class="arrow">&#8594; Every AUM figure, the size screen, the rankings, the stacked chart, the discretionary share.</div>
+    <span class="flag ok">&#10003; Regulatory AUM is a prescribed definition. It includes non-discretionary assets and accounts receiving ongoing supervisory services, which is broader than most readers assume.</span></div>
+  <div class="vcard ok"><div class="vh">&#10003; FILED &middot; ITEMS 5.A, 5.B(1), 5.C(1), 1.F</div>
+    Total employees, employees performing advisory functions, number of clients, and principal office address.
+    <div class="arrow">&#8594; Staff counts, AUM per head, client counts, the state breakdown.</div>
+    <span class="flag ok">&#10003; ${fmtN(FIRMS.filter(f=>!f.state).length)} advisers in this universe report no usable state in any of the ${META.periods.length} files. They are counted in every total and excluded only from the state chart.</span></div>
+  <div class="vcard derived"><div class="vh">&#9673; DERIVED &middot; MARKET VS NET NEW ASSETS</div>
+    The one calculation on this site, run in your browser rather than baked into the data file.
+    <div class="arrow">&#8594; Organic growth, net new assets, percentage earned, the split bars, the scatter.</div>
+    <span class="flag">&#9888; It assumes every adviser earned the same blended benchmark. Form ADV Part 1 does not disclose asset allocation, so there is no per-adviser mix available anywhere in this data. That is the largest single assumption on this site and it is why the flows figure is an estimate, not a measurement.</span></div>
+  <div class="vcard gap"><div class="vh">&#9888; NOT FILED &middot; WHAT NO ADVISER DISCLOSES</div>
+    Performance. Client retention. Revenue. Realized fee rate. Profitability. Asset allocation. Whether an AUM jump came from ten new households or one institutional mandate.
+    <div class="arrow">&#8594; This site can tell you an adviser grew. It cannot tell you they are good, and it never claims to.</div>
+    <span class="flag">&#9888; Form ADV Part 2A publishes a fee schedule, not a realized rate. Revenue estimates built by multiplying AUM by a published schedule are guesses dressed as data, and none appear here.</span></div>`;
+  app.appendChild(v);
+
+  sec(`<h2>The benchmark</h2>
+  <p>FRED's ICE and BofA total-return bond indices are licence-limited to a rolling three-year window, which is too short for this series. The equity leg therefore uses the S&P 500 price index with a constant dividend add-back, and the bond leg is a duration approximation from the 10-year Treasury. Both are stated below rather than hidden, and both are configurable at build time.</p>
+  <div class="formula">blended[t] = ${(b.equity_weight*100).toFixed(0)}% * equity[t] + ${(b.bond_weight*100).toFixed(0)}% * bond[t]
+
+equity[t] = SP500[t] / SP500[t-1] - 1 + ${b.dividend_addback_pct}%      (FRED: SP500)
+bond[t]   = y10[t-1] - ${b.bond_duration_years} * (y10[t] - y10[t-1])         (FRED: DGS10)</div>`);
+  const wrap=node(`<div class="tblwrap"><table><thead><tr><th>Year</th>
+    <th style="text-align:right">S&amp;P 500</th><th style="text-align:right">10y yield</th>
+    <th style="text-align:right">Equity leg</th><th style="text-align:right">Bond leg</th>
+    <th style="text-align:right">Blended</th><th style="text-align:right">Observed on</th>
+    </tr></thead><tbody></tbody></table></div>`);
+  wrap.querySelector("tbody").innerHTML=b.periods.map(p=>`<tr>
+    <td class="nm" style="cursor:default">${p.period}</td>
+    <td class="num">${p.spx==null?"&mdash;":fmtN(Math.round(p.spx))}</td>
+    <td class="num">${p.y10==null?"&mdash;":p.y10.toFixed(2)+"%"}</td>
+    <td class="num ${p.equity==null?"":(p.equity<0?"neg":"pos")}">${p.equity==null?"&mdash;":fmtPct(p.equity)}</td>
+    <td class="num ${p.bond==null?"":(p.bond<0?"neg":"pos")}">${p.bond==null?"&mdash;":fmtPct(p.bond)}</td>
+    <td class="num ${p.blended==null?"":(p.blended<0?"neg":"pos")}">${p.blended==null?"&mdash;":fmtPct(p.blended)}</td>
+    <td class="num">${p.spx_date||"&mdash;"}</td></tr>`).join("");
+  app.appendChild(wrap);
+
+  sec(`<h2>Where this method is wrong</h2>`);
+  sec("<p>"+META.caveats.map((c,i)=>`<b>${i+1}.</b> ${c}`).join("</p><p>")+"</p>");
+  sec(`<p><b>${META.caveats.length+1}.</b> Regulatory AUM is not billable AUM. It sweeps in non-discretionary accounts and supervised assets an adviser may earn nothing on. Two advisers reporting ${fmtM(500)} can be very different businesses.</p>
+  <p><b>${META.caveats.length+2}.</b> Fiscal year ends differ. Most advisers use December, some do not, and every figure here is read from the August full file regardless, which introduces timing error nobody can remove.</p>`);
+
+  sec(`<h2>What would make this better</h2>
+  <p>Three additions, in order of value. First, <b>monthly rather than annual snapshots</b>. The SEC publishes ${fmtN(224)} of these files back to 2006 and this build reads ${META.periods.length} of them. Reading all of them raises the resolution of the flows calculation roughly twelvefold and costs only time. Second, <b>Form 13F cross-reference</b>, which would give a real market-exposed share for the minority of advisers who file one and replace the uniform benchmark assumption for them. Third, <b>an adviser correction channel</b>, because the fastest way to learn that a jump was an acquisition is for the adviser to say so.</p>
+  <div class="lesson"><div class="k">THE STANDARD THIS SITE HOLDS ITSELF TO</div>
+  <p>Never show an AUM growth figure without the flows split next to it. The growth number alone is the market's report card. The split is the adviser's.</p></div>`);
+  pager(1);
+}
+
+function renderDisc(){
+  sec(`<p class="eyebrow q">DISCLOSURES</p><h1>What this is not.</h1>
+  <p class="lede">Asch Capital publishes a research view of adviser scale built entirely from public SEC filings. It is not an offer, not a recommendation, and not a performance record.</p>
+  <p><b>Not investment advice.</b> Nothing here is personalized investment, legal or tax advice, and no content should be relied upon as the basis for any investment decision or for selecting an adviser.</p>
+  <p><b>Not performance.</b> No figure on this site is an investment return. The market-versus-flows split is an accounting estimate of where AUM change came from, not a measure of how any portfolio performed. Advisers do not file performance and this site does not infer it.</p>
+  <p><b>Not an endorsement.</b> Inclusion reflects a filing threshold only. Exclusion reflects a filing threshold only. Neither implies any view on the quality of an adviser.</p>
+  <p><b>Regulatory AUM is a defined term.</b> It is not billable assets, advisory revenue, or client wealth. Comparisons between advisers with different discretionary shares, client types and asset mixes are limited on their face.</p>
+  <p><b>Derived figures are estimates.</b> The flows split rests on an assumption the methodology page states plainly: that every adviser earned the same blended benchmark. Where an adviser's actual allocation or performance differed, the derived flows figure is wrong by that difference.</p>
+  <p><b>Corrections.</b> Where a figure here is later found to be wrong, the correction stays visible on the page rather than replacing the original silently.</p>
+  <p><b>Adviser response.</b> Any adviser shown may submit a correction, an acquisition disclosure, or context on a flows figure, to <a href="mailto:__CONTACT__?subject=Correction%20request">__CONTACT_SHOWN__</a>. Corrections that change a derived number are published with the original alongside. Please include the adviser's CRD number.</p>
+  <p class="mutednote">Source data is retrieved from the SEC's public FOIA-released Form ADV files and from FRED. The SEC does not endorse, review or verify the accuracy of adviser-submitted filings, and neither system implies any SEC approval of any adviser. Data as filed in the ${filedOn()} full file; advisers amend Form ADV continuously and the live IAPD record may differ.</p>
+  <div class="lesson"><div class="k">THE SHORT VERSION</div>
+  <p>Everything green is filed with the SEC and you can check it on IAPD from any adviser page. Everything blue is arithmetic we did on top of it and showed you. If a number here carries no mark, it is a mistake and we want to hear about it.</p></div>`);
+  pager(6);
+}
+
+/* ====================== 5. CHROME, SEARCH, ROUTER ======================= */
+function pager(i){
+  const p=document.createElement("div"); p.className="pager";
+  const prev=SCREENS[i-1], next=SCREENS[i+1];
+  const a=document.createElement("button"); a.className="pg";
+  a.textContent=prev?"← "+prev.label:"←"; a.disabled=!prev; if(prev)a.onclick=()=>go(prev.id);
+  const b=document.createElement("button"); b.className="pg";
+  b.textContent=next?next.label+" →":"→"; b.disabled=!next; if(next)b.onclick=()=>go(next.id);
+  p.append(a,b); app.appendChild(p);
+}
+
+const strip=document.getElementById("strip"), stripwrap=document.getElementById("stripwrap");
+function buildStrip(){
+  strip.innerHTML="";
+  SCREENS.forEach(s=>{const c=document.createElement("button"); c.className="chip"+(s.cls?" "+s.cls:"");
+    c.textContent=s.label; c.dataset.id=s.id; c.onclick=()=>go(s.id); strip.appendChild(c);});
+}
+stripwrap.querySelector(".cscroll.l").onclick=()=>strip.scrollBy({left:-260});
+stripwrap.querySelector(".cscroll.r").onclick=()=>strip.scrollBy({left:260});
+function overflowCheck(){stripwrap.classList.toggle("over",strip.scrollWidth>strip.clientWidth+4);}
+addEventListener("resize",overflowCheck);
+
+/* ---- nav search with keyboard-navigable results ---- */
+const qbox=document.getElementById("q"); let acEl=null, acSel=-1, acList=[];
+function closeAc(){ if(acEl){acEl.remove(); acEl=null;} acSel=-1; acList=[]; }
+function openAc(){
+  const q=qbox.value.trim().toLowerCase(); closeAc();
+  if(q.length<2||!FIRMS.length) return;
+  acList=FIRMS.filter(f=>f.search.includes(q)).slice(0,8);
+  if(!acList.length) return;
+  acEl=document.createElement("div"); acEl.className="ac";
+  acList.forEach((f,i)=>{const b=document.createElement("button"); b.type="button";
+    b.innerHTML=`${f.name}<br><span class="sub">${fmtM(f.now)} &middot; ${f.city||""}${f.state?", "+f.state:""} &middot; CRD ${f.crd}</span>`;
+    b.onmousedown=e=>{e.preventDefault(); qbox.value=""; closeAc(); go("firm/"+f.crd);};
+    acEl.appendChild(b);});
+  qbox.parentNode.appendChild(acEl);
+}
+let qdeb; qbox.oninput=()=>{clearTimeout(qdeb); qdeb=setTimeout(openAc,120);};
+qbox.onblur=()=>setTimeout(closeAc,140);
+qbox.onfocus=()=>{ if(qbox.value.trim().length>=2) openAc(); };
+qbox.onkeydown=e=>{
+  if(e.key==="Escape"){ closeAc(); qbox.blur(); return; }
+  if(!acList.length){ if(e.key==="Enter"){ SCR.q=qbox.value; SCR.page=0; go("screener"); } return; }
+  if(e.key==="ArrowDown"||e.key==="ArrowUp"){
+    e.preventDefault(); acSel=(acSel+(e.key==="ArrowDown"?1:-1)+acList.length)%acList.length;
+    [...acEl.children].forEach((c,i)=>c.classList.toggle("sel",i===acSel));
+  } else if(e.key==="Enter"){
+    e.preventDefault();
+    if(acSel>=0){ qbox.value=""; const f=acList[acSel]; closeAc(); go("firm/"+f.crd); }
+    else { SCR.q=qbox.value; SCR.page=0; closeAc(); go("screener"); }
+  }
+};
+
+let CURRENT="index";
+function go(id){ CURRENT=id; try{ if(location.hash.slice(2)!==id) location.hash="#/"+id; }catch(e){} route(id); }
+document.getElementById("home").onclick=()=>go("index");
+
+function route(force){
+  let id=force; if(!id){ try{ id=location.hash.slice(2); }catch(e){} }
+  id=id||CURRENT||"index";
+  /* Screens registered by app/labs.js score and render on their own and
+     never read DATA, so they must not sit behind the 1.7 MB index fetch. */
+  const labs=!!(window.LABS&&LABS.has(id));
+  if(!DATA&&!labs) return;
+  CURRENT=id;
+  app.innerHTML="";
+  if(labs)                        LABS.route(id);
+  else if(id==="index")           renderHome();
+  else if(id==="method")          renderMethod();
+  else if(id==="ceiling")         renderCeiling();
+  else if(id==="cohorts")         renderCohorts();
+  else if(id==="states")          renderStates();
+  else if(id==="screener")        renderScreener();
+  else if(id==="disclosures")     renderDisc();
+  else if(id.startsWith("firm/")) renderFirm(id.slice(5));
+  else { go("index"); return; }
+  if(labs) app.dataset.labs=id; else delete app.dataset.labs;
+  /* Each new section carries its own visual identity; leaving one takes
+     it back off, so the index screens are never skinned. */
+  if(window.LABS) LABS.applySkin(labs?id:null);
+  const chipId=labs?LABS.chipFor(id):id;
+  [...strip.children].forEach(c=>{const on=c.dataset.id===chipId; c.classList.toggle("on",on);
+    if(on) c.scrollIntoView({block:"nearest",inline:"center"});});
+  scrollTo({top:0,behavior:"instant"});
+  const s=SCREENS.find(s=>s.id===id);
+  const f=(!labs&&id.startsWith("firm/"))?BYCRD.get(+id.slice(5)):null;
+  document.title = id==="index" ? "Asch Capital"
+                 : "Asch Capital · " + (f?f.label:(labs?LABS.titleFor(id):(s?s.label:"Not found")));
+  overflowCheck();
+}
+addEventListener("hashchange",()=>{const id=location.hash.slice(2)||"index"; if(id!==CURRENT) route(id);});
+
+/* ---- boot ---- */
+function colophon(){
+  document.getElementById("colophon").innerHTML=`
+  <b>ASCH CAPITAL</b> &middot; The Boutique RIA AUM Index &middot; ${fmtN(FIRMS.length)} advisers &middot; ${fmtM(TOTAL)}<br>
+  &ldquo;Every dollar of AUM growth was either won or borrowed. Only one of them is a business.&rdquo;<br>
+  Sources: <a href="${META.source.adv_url}" target="_blank" rel="noopener">${META.source.adv}</a>
+  &middot; <a href="${META.source.market_url}" target="_blank" rel="noopener">${META.source.market}</a><br>
+  Green means net new assets. Grey means market appreciation. Red means net outflows. Those three colors have no other job on this site.<br>
+  Filings as of ${filedOn()} &middot; index built ${META.generated.slice(0,10)} &middot; every adviser page links to its live SEC record<br>
+  Corrections: <a href="mailto:__CONTACT__?subject=Correction%20request">__CONTACT_SHOWN__</a>`;
+  document.getElementById("tag").innerHTML=
+    `${fmtN(FIRMS.length)} advisers &middot; ${fmtM(TOTAL)} &middot; Form ADV ${filedOn()}`;
+}
+
+fetch("index.json",{cache:"no-cache"})
+  .then(r=>{ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+  .then(j=>{ DATA=j; derive(); buildStrip(); colophon(); overflowCheck();
+    /* A labs screen may already be rendered (it does not wait for this
+       fetch). Re-running route() there would throw away in-progress
+       state, so only the chip strip is refreshed. */
+    if(window.LABS&&LABS.has(CURRENT)&&app.dataset.labs===CURRENT){
+      const c=LABS.chipFor(CURRENT);
+      [...strip.children].forEach(x=>x.classList.toggle("on",x.dataset.id===c));
+    } else route(); })
+  .catch(err=>{
+    app.innerHTML=`<div class="failed"><h3>Could not load the index</h3>
+      <p><code>index.json</code> did not load: ${String(err.message||err)}</p>
+      <p>This page fetches its data at runtime, so it needs to be served over HTTP rather than opened
+      from the filesystem. From the project directory:</p>
+      <div class="formula">python3 -m http.server 8080
+open http://localhost:8080/</div>
+      <p>If the file is missing, rebuild it:</p>
+      <div class="formula">python3 ingest/fetch_adv.py --years 2018-2026
+python3 ingest/build_index.py</div></div>`;
+  });
+</script>
+
+<!-- The four sections added to the right of the strip: Prometheus, Recruiting,
+     AI Operations, Trading DNA. Classic scripts, loaded after the inline one so
+     they share its global scope; deferred so they never block first paint. -->
+
+<!-- Attention. Registers through LABS.register and appends its own chip,
+     so it loads after labs.js and sits furthest right in the strip. -->
+
+<!-- Build. Same pattern; loads after Attention so its chip sits furthest
+     right of all. A guided interview that builds a language model from scratch. -->
+
+<!-- Economics. Same pattern; loads after Build so its chip sits furthest
+     right of all. David's Econ 110 semester plan, shown in a same-origin
+     iframe over app/economics-plan.html. -->
+
+<!-- IRA Calculator. Same pattern; loads after Economics so its chip sits
+     furthest right of all. A plain IRA-withdrawal tax calculator, shown in a
+     same-origin iframe over app/ira-calculator.html. -->
+
+<!-- Memory Major. A Major System peg-list study tool, shown in a same-origin
+     iframe over app/memory-major.html. Guided mode only, no network calls. -->

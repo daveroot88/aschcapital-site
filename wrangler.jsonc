@@ -1,0 +1,45 @@
+{
+  // aschcapital.com is a Workers static-assets project, not a Pages project.
+  // The name must stay exactly this: it is the existing Worker that already holds
+  // the aschcapital.com custom domain. Renaming it would create a second Worker
+  // and leave the live domain pointing at the old one.
+  "name": "white-darkness-ab1e",
+  "compatibility_date": "2026-08-21",
+
+  // Previously there was no script at all and dist/ was served directly. The
+  // script exists now so the four new sections have an intake endpoint. It
+  // hands every non-/api/ request straight to ASSETS, so the index, the
+  // screener, every firm page and data/index.json are served exactly as before.
+  "main": "./worker/index.js",
+
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+
+  // Submissions land here: track records, trading history, enquiries.
+  //
+  // Workers KV rather than R2, because R2 needs a dashboard opt-in that
+  // has not happened. The Worker prefers R2 whenever an R2 bucket is
+  // bound and falls back to KV otherwise, and the key layout is the same
+  // either way, so moving later is a config change and nothing more.
+  //
+  // KV caps a value at 25 MiB, which is already the Worker's per-file
+  // limit, so nothing that fits today would be rejected.
+  "kv_namespaces": [
+    {
+      "binding": "INTAKE",
+      "id": "ee96d77893fe4932a852242eb07faa76"
+    }
+  ]
+
+  // TO MOVE TO R2 LATER (better home for blobs, cheaper at volume):
+  //   1. dash.cloudflare.com -> R2 -> enable
+  //   2. npx wrangler r2 bucket create asch-intake
+  //   3. add the block below, with a comma after kv_namespaces
+  //   4. ./deploy/deploy.sh
+  //
+  // "r2_buckets": [
+  //   { "binding": "UPLOADS", "bucket_name": "asch-intake" }
+  // ]
+}
